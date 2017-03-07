@@ -1,0 +1,3669 @@
+	<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8" />		
+		<meta name="description" content=" " />
+		<meta name="keywords" content=" " />
+		
+		<title>IndyStar Interactive 2017 NCAA Bracket</title>
+		
+		<link href="../../styleguide/css/interactive_styleguide.css" rel="stylesheet" type="text/css" />	
+		
+		<link href="../interactive_styleguide.css" rel="stylesheet" type="text/css" />	
+		
+		<style type="text/css">
+			
+			body,ul,li,p,img,iframe { margin: 0; padding: 0; }
+			
+			#int_whoAreYou_container { position: relative; top: 47px; }
+			
+			.INI_indystarNavBox { width: 100%; height: 40px; background: black; position: absolute; top: 0px;  clear: both; z-index: 5 !important; }
+			.INI_navLogo { width: 124px; margin: auto; }			
+			
+			#INI_NCAAbracket { z-index: 0 !important; }
+			
+			#int_ncaaBracket {
+				/* background: url("images/NCAA_BRACKET.png") 0 0 no-repeat; */
+				width: 920px; height: 700px;
+				float: left;
+				position: relative;
+			}	
+			
+			#int_ncaaBracket span li:hover { cursor: pointer; }
+			
+			.draggable:hover { cursor: pointer; }
+		
+			#int_ncaaBracket li { 
+				list-style-type: none; 
+				position: absolute; 
+				font-family: "Arial", Verdana, sans-serif;
+				font-size: .75em;
+							
+			}
+			
+
+/* int_midwestBracket  int_southBracket  int_eastBracket	int_westBracket  */
+										
+
+			#int_midwestBracket li.int_round1 { width:108px; left: 5px; }
+				#int_midwestBracket li.int_round2 { width:100px; left: 599px; }
+					#int_midwestBracket li.int_round3 { width:100px; left: 518px; }
+						#int_midwestBracket li.int_round4 { width:100px; left: 440px; }
+							#int_midwestBracket li.int_round5 { width:100px; left: 363px; }
+			
+				
+			#int_southBracket li.int_round1 { width:103px; left: 5px; }				
+				#int_southBracket li.int_round2 { width:100px; left: 0px; }
+					#int_southBracket li.int_round3 { width:100px; left: 80px; }
+						#int_southBracket li.int_round4 { width:100px; left: 160px; }
+							#int_southBracket li.int_round5 { width:100px; left: 240px; }
+			
+				
+			
+			#int_westBracket li.int_round1 { width:103px; left: 5px; }
+				#int_westBracket li.int_round2 { width:100px; left: 0px; }
+					#int_westBracket li.int_round3 { width:100px; left: 0px; }
+						#int_westBracket li.int_round4 { width:100px; left: 160px; }
+							#int_westBracket li.int_round5 { width:100px; left: 240px; }				
+			
+			
+			#int_eastBracket li.int_round1 { width:103px; left: 5px; }
+				#int_eastBracket li.int_round2 { width:100px; left: 599px; }
+					#int_eastBracket li.int_round3 { width:100px; left: 518px; }
+						#int_eastBracket li.int_round4 { width:100px; left: 440px; }
+							#int_eastBracket li.int_round5 { width:100px; left: 363px; }
+							
+			
+							
+			#playin_games li { width: 90px; }
+			
+			#int_midwestBracket { position: absolute; top:335px; }
+			#int_westBracket { position: absolute; top:335px; }
+			
+			#int_finalFour { position: absolute; top: 150px; left: 360px;  width:75px;}
+			#int_finalChampionship { position: absolute; top: 315px; left: 355px;  width:75px; }
+			
+			.bracket_li_span { height: 0px; width: 97px;  position: absolute; /* background: rgba(230,230,230, 0.60); */ }
+			/* .bracket_li_span:hover { border: #b30000 solid 1px; background: url("images/hover_gray50pct.png") 0 0 repeat; cursor: pointer; } */
+			
+			
+			.bracket_selected { background: url("images/hover_gray50pct.png") 0 0 repeat; }
+
+			
+			#Bmw:hover {cursor: pointer;}
+								
+			#ncaa_bracketNav {
+				position: absolute;
+				top: 220px; left: 362px;
+				z-index: 33;
+				font-size: 12px;
+			}
+			
+			#ncaa_bracketNav a { background: #009bff; color: white; padding: .25em .5em; text-decoration: none; font-weight: bold; } /* OG background #369 */
+			#ncaa_bracketNav a:hover { background: #369; }
+			
+			#ncaa_bracketNav a:nth-child(1) { text-align: center; margin-left: .13em; line-height: 3em; }
+			#ncaa_bracketNav a:nth-child(6) { background: #ccc !important; margin-left: 4.25em; line-height: 3em; }
+			#ncaa_bracketNav a:nth-child(8) { background: white !important; margin-left: 6em; line-height: 5em; }
+			
+							
+/*
+			#int_NCAA_teamName_bracket { display: block; width: 13em; height: 2em; position: absolute; top:30px; left: 380px; text-align: center; z-index: 85;}
+			#int_NCAA_teamName_bracket:hover { cursor: pointer; }
+			
+			#int_NCAA_Mascot_bracket { display: block; width: 13em; height: 2em; position: absolute; top:50px; left: 380px; text-align: center; z-index: 75; }
+			#int_NCAA_Mascot_bracket:hover { cursor: pointer; }
+			
+			#int_NCAA_GetLucky_bracket { display: block;  height: 2em; position: absolute; top: 70px; left: 433px; z-index: 65;}
+			#int_NCAA_GetLucky_bracket:hover { cursor: pointer; }
+*/
+			
+/*
+			#int_NCAA_GetLucky_bracket_remains { display: block; height: 2em; position: absolute; left: 480px; }
+			#int_NCAA_GetLucky_bracket_remains:hover { cursor: pointer; }
+*/
+			
+			.droppable_pTags { height:1.3em;width:8em; color: #ccc; font-size: 10px; }
+			
+			#int_Champion { position: absolute; top:275px; left:385px; }
+			
+			#champ p { width: 150px; text-align: center !important;}
+			#champ { width: 150px; text-align: center !important; font-size: 1em; }
+			
+			#int_matchupFocus { position: absolute; top: 0px; left: 0px; z-index: 999; background: url("images/matchup_background.png") 0 0 repeat; width: 100%; height: 100%;  padding-top: 3em; }
+			
+			#int_matchupFocus #matchup_box { width:600px; height: 500px; margin: auto; background: white; border: 3px solid #ccc; }
+			
+			.notSelected {  }
+			
+			.ncaa_teamfocus { font-family: "Arial", Verdana, sans-serif;  width: 250px; height: 450px; float: left; margin-top: 25px; position: relative; }
+			
+			#matchup_box div:nth-child(1) { margin-left: 33px; }
+			#matchup_box div:nth-child(2) { margin-left: 23px; }
+			
+			.ncaa_record_conf { border-top: 1px solid #009bff; position: relative; margin-bottom: 3em; }
+			.matchup_record { color: #aaa; font-size:12px; float: right; margin-top: .25em; /* position: absolute; top:33px; left: 60px; */ }
+			.matchup_conf { color: #333; float: left; margin-top: .25em; }
+			.matchup_analysis { font-size:12px; line-height: normal; margin-bottom: .5em; }
+			
+			
+			.ncaa_teamfocus h4 span { font-weight: normal; }
+			/* .bring_theFunny { border-top: 1px solid black; margin-top: 2em; padding-top: 1em; font-size:12px; line-height: normal; } */
+			.bring_theFunny { margin-bottom: 1.3em; padding-bottom: 1em; font-size:12px; line-height: normal; font-style: italic; color: #777;  }
+			
+			#matchup_box input { width: 66px; margin: 0 44%; }
+			
+			#rounds_n_dates { float: left; z-index: 0; }
+			
+			.highlight { color: red; background-color: aqua; }
+			
+			.sourceline a { text-decoration: none; color: #004b77; }
+			
+			.notchstyle { margin-bottom: 1.3em; }
+			
+			.boldMe { font-weight: bold; color: #009bff; }
+			
+			.quickFacts {
+				border-top: 1px dashed #009bff;
+				padding-top: 1em;
+				width: 100%;
+				position: absolute; top: 23em; 	
+			}
+			
+			.iniAd_728 {  
+				display: block;
+				width:920px;
+				height:100px;
+				margin:auto;
+				margin-bottom: 2.3em;
+				background:#000 !important;
+				text-align: center;
+				color: white;
+				z-index: 150 !important;				
+			}
+			
+			#blackINIlogo {
+				position: absolute;
+				top: -47px; left: 336px;
+			}
+			
+			.interactive div a { position: absolute; top: 125px; left: 336px; visibility: hidden; }			
+			
+			.bx-slab { display: none !important; position: absolute !important; top: -9999px !important; }
+			
+			.bxc { display: none !important; position: absolute !important; top: -9999px !important; }			
+			.bx-hover-shroud { display: none !important; position: absolute !important; top: -9999px !important; }
+			.bx-matte { display: none !important; position: absolute !important; top: -9999px !important; }
+			
+		</style>
+		
+  		<style type="text/css" media="print">
+			.noPrint { display: none; }
+			.droppable_pTags { display: none; }
+			.interactive div p { visibility: hidden; }			
+			.interactive div a { visibility: visible; }			
+		</style>
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		
+		
+		
+
+
+		
+		
+		
+		<!-- <script src="jquery-1.8.1.min.js"></script>  -->
+		
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+	</head>
+	<body>
+			
+		<div class="INI_indystarNavBox">
+			<div class="INI_navLogo">
+				<a href="http://www.indystar.com" target="_self"><img src="http://interactives.indystar.com/styleguide/images/site-nav-logo.png" width="124" height="40" /></a>				
+			</div>
+			
+			<iframe src="http://www.indystar.com/services/cobrand/header/" style="position: absolute; top:-9999px; border-width: 0px; height: 0px; width: 0px" ></iframe>
+
+		</div>	
+				
+				
+		<div id="int_whoAreYou_container" class="fulli_container">
+			
+			<a id="blackINIlogo" href="http://www.indystar.com" target="_self"><img src="http://interactives.indystar.com/styleguide/images/site-nav-logo.png" width="124" height="40" /></a>
+			
+			<div style="background:#000 !important;" class="iniAd_728"><a href="http://www.indystar.com/marchmania" target="_blank"><img src="images/ad_INI_920x100.jpg" width="920" height="100" /></a></div>
+			
+			<div class=" interactive">
+				<div class="">
+					
+					<p style="padding-left:1.6em; padding-right:1.6em;">
+						This interactive NCAA tournament bracket can be viewed by team name or &mdash; if you&rsquo;re into making your selections based on mascots &mdash; there is an option to view the bracket by mascot. If you&rsquo;re feeling lucky, use our &lsquo;Randomize&rsquo; feature to fill in your bracket. If at any time you wish to start over, click the &lsquo;Clear Bracket&rsquo; button. When you&rsquo;re sure of your picks, click the &lsquo;Print&rsquo; icon.
+
+					</p>
+					
+				</div>
+				
+			</div>
+
+			<nav id="ncaa_bracketNav" class="noPrint">
+				
+				<a href="#" id="int_NCAA_GetLucky_bracket" >Randomize - Do you feel lucky?</a> <br /> 
+
+				<a href="#" id="int_NCAA_teamName_bracket">View by Team</a>
+			
+				<a href="#" id="int_NCAA_Mascot_bracket">View by Mascot</a> <br />
+				
+				<a href="#" id="int_NCAA_Clear_bracket">Clear Bracket</a> <br />
+				
+				<a href="#" id="printMyBracket"><img src="images/printMe.png" alt="printMe" width="34" height="29" /></a>
+					
+			</nav>
+			
+			<div  id="rounds_n_dates">
+				<img src="images/NCAA_round_dates.jpg" alt="NCAA_round_dates" width="920" height="25" />
+			</div>
+			
+			<div id="int_ncaaBracket">
+				<img id="INI_NCAAbracket" src="images/NCAA_BRACKET_new.png" alt="NCAA_BRACKET" width="920" height="700" />
+<!--
+				<div id="int_matchupFocus" style="">
+					<div id="matchup_box">
+						<div class="ncaa_teamfocus">
+							
+							
+						</div>
+						
+						<div class="ncaa_teamfocus">
+														
+						</div>
+						
+						<input type="submit" value="Close" />
+						
+					</div> 
+				</div>
+--> <!-- END int_matchupFocus -->
+				
+				<ul id="int_midwestBracket" >
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									midwest bracket ROUND 1 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="mwest_1" class="bracket_li_span " style="top:5px;left:805px;">
+						<li id="1mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:0px; " class="int_round1 draggable">xxxx</li>
+						<li id="16mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:14px; " class="int_round1 draggable">xxxx</li>
+					</span>
+					<span id="mwest_2" class="bracket_li_span" style="top:39px;left:805px;">
+						<li id="8mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:0px; " class="int_round1 draggable">Butler</li>
+						<li id="9mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:16px; " class="int_round1 draggable">Ball State</li>
+					</span>
+					<span id="mwest_3" class="bracket_li_span" style="top:96px;left:805px;">
+						<li id="5mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:0px; " class="int_round1 draggable">Notre Dame</li>
+						<li id="12mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:15px; " class="int_round1 draggable">xxxx</li>
+					</span>
+					<span id="mwest_4" class="bracket_li_span" style="top:130px;left:805px;">
+						<li id="4mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:0px; " class="int_round1 draggable">Louisville</li>
+						<li id="13mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:15px; " class="int_round1 draggable">Northwestern</li>
+					</span>
+					<span id="mwest_5" class="bracket_li_span" style="top:183px;left:805px;">
+						<li id="6mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:0px;" class="int_round1 draggable">Michigan</li>
+						<li id="11mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:15px;" class="int_round1 draggable">Ohio</li>
+					</span>
+					<span id="mwest_6" class="bracket_li_span" style="top:218px;left:805px;">
+						<li id="3mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:0px;" class="int_round1 draggable">Xavier</li>
+						<li id="14mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:15px;" class="int_round1 draggable">Gonzaga</li>
+					</span>
+					<span id="mwest_7" class="bracket_li_span" style="top:265px;left:805px;">
+						<li id="7mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:0px;" class="int_round1 draggable">Stanford</li>
+						<li id="10mw" data-name="UCLA" data-id="" data-mascot=""  data-region="midwest" style="top:15px;" class="int_round1 draggable">UCLA</li>
+					</span>
+					<span id="mwest_8" class="bracket_li_span" style="top:303px;left:805px;">
+						<li id="2mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:0px;" class="int_round1 draggable">Duke</li>
+						<li id="15mw" data-name="" data-id="" data-mascot="" data-region="midwest" style="top:15px;" class="int_round1 draggable">UNC</li>
+					</span>
+					
+					
+
+
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									midwest bracket ROUND 2 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="mwest_A" class="bracket_li_span" style="top:0px;left:122px; width:75px;">
+						<li id="Amw" data-name="" data-mascot="" data-id="" data-region="midwest" style="top:10px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags">Drag team here</p>
+							
+						</li>
+						<li id="Bmw" data-name="" data-mascot="" data-id="" data-region="midwest" style="top:41px; " class="int_round2 droppable draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="mwest_B" class="bracket_li_span" style="top:90px;left:122px; width:75px;">
+						<li id="Cmw" data-name="" data-mascot="" data-id="" data-region="midwest" style="top:11px; " class="int_round2  droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Dmw" data-name="" data-mascot="" data-id="" data-region="midwest" style="top:43px; " class="int_round2  droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="mwest_C" class="bracket_li_span" style="top:182px;left:122px; width:75px;">
+						<li id="Emw" data-id="" data-name="" data-mascot=""data-region="midwest"style="top:7px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Fmw" data-id="" data-name="" data-mascot=""data-region="midwest"style="top:39px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="mwest_D" class="bracket_li_span" style="top:265px;left:122px; width:75px;">
+						<li id="Gmw" data-id="" data-name="" data-mascot=""data-region="midwest"style="top:8px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Hmw" data-id="" data-name="" data-mascot=""data-region="midwest"style="top:43px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+										
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									midwest bracket ROUND 3 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="mwest_E" class="bracket_li_span" style="top:15px;left:125px; ">
+						<li id="Imw" data-name="" data-mascot="" data-id="" data-region="midwest" style="top:9px; " class="int_round3 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Jmw" data-name="" data-mascot="" data-id="" data-region="midwest" style="top:99px; " class="int_round3 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="mwest_F" class="bracket_li_span" style="top:196px;left:125px; ">
+						<li id="Kmw" data-id="" data-name="" data-mascot=""data-region="midwest"style="top:7px; " class="int_round3 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Lmw" data-id="" data-name="" data-mascot=""data-region="midwest"style="top:94px; " class="int_round3 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									midwest bracket ROUND 4 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="mwest_G" class="bracket_li_span" style="top:58px;left:122px; ">
+						<li id="Mmw" data-id="" data-name="" data-mascot=""data-region="midwest"style="top:9px; " class="int_round4 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Nmw" data-id="" data-name="" data-mascot=""data-region="midwest"style="top:186px; " class="int_round4 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									midwest bracket ROUND 5 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+<!--
+					<span id="mwest_H" class="bracket_li_span" style="top:145px;left:120px; height:200px;">
+						<li id="Omw" data-id="Os" data-name="" data-mascot=""  data-region="midwest" style="top:7px; " class="int_round5 droppable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+
+					</span>
+-->
+					
+					
+			
+					
+				</ul> <!-- END midwest region -->
+				
+
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									west bracket ROUND 1 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->						
+				
+				<ul id="int_westBracket" class="int_round1 ">
+					<!-- west bracket  ROUND 1 -->
+					<span id="west_1" class="bracket_li_span" style="top:5px;left:13px;">
+						<li id="1w" data-name="" data-id="" data-mascot="" data-region="west" style="top:0px; " class="int_round1 draggable ">west 1</li>						
+						<li id="playin_win_w" data-name="Play-in" data-id="Play-in" data-mascot="Play-in" data-region="west" style="top:14px; " class="int_round1 draggable droppable "><span style="color:#f02f2f;">Play-in</span></li>
+					</span>
+					<span id="west_2" class="bracket_li_span" style="top:40px;left:13px;">
+						<li id="8w" data-name="" data-id="" data-mascot="" data-region="west" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="9w" data-name="" data-id="" data-mascot="" data-region="west" style="top:14px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="west_3" class="bracket_li_span" style="top:95px;left:13px;">
+						<li id="5w" data-name="" data-id="" data-mascot="" data-region="west" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="12w" data-name="" data-id="" data-mascot="" data-region="west" style="top:14px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="west_4" class="bracket_li_span" style="top:129px;left:13px;">
+						<li id="4w" data-name="" data-id="" data-mascot="" data-region="west" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="13w" data-name="" data-id="" data-mascot="" data-region="west" style="top:15px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="west_5" class="bracket_li_span" style="top:182px;left:13px;">
+						<li id="6w" data-name="" data-id="" data-mascot="" data-region="west" style="top:0px;" class="int_round1 draggable ">xxxxx</li>												
+						<li id="11w" data-name="" data-id="" data-mascot="" data-region="west" style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="west_6" class="bracket_li_span" style="top:219px;left:13px;">
+						<li id="3w" data-name="" data-id="" data-mascot="" data-region="west" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="14w" data-name="" data-id="" data-mascot="" data-region="west" style="top:13px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="west_7" class="bracket_li_span" style="top:267px;left:13px;">
+						<li id="7w" data-name="" data-id="" data-mascot="" data-region="west" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="10w" data-name="" data-id="" data-mascot="" data-region="west" style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="west_8" class="bracket_li_span" style="top:302px;left:13px;">
+						<li id="2w" data-name="" data-id="" data-mascot="" data-region="west" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="15w" data-name="" data-id="" data-mascot="" data-region="west" style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					
+					
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									west bracket ROUND 2 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="west_A" class="bracket_li_span" style="top:9px;left:122px; width:75px;">
+						<li id="Aw" data-name="" data-mascot="" data-id=""data-region="west"  style="top:0px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Bw" data-name="" data-mascot="" data-id=""data-region="west"  style="top:33px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="west_B" class="bracket_li_span" style="top:100px;left:122px; width:75px;">
+						<li id="Cw" data-name="" data-mascot="" data-id="" data-region="west" style="top:0px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Dw" data-name="" data-mascot="" data-id="" data-region="west"  style="top:32px; " class="int_round2 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="west_C" class="bracket_li_span" style="top:188px;left:122px; width:75px;">
+						<li id="Ew" data-id="" data-name="" data-mascot="" data-region="west"style="top:0px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Fw" data-id="" data-name="" data-mascot="" data-region="west"style="top:33px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="west_D" class="bracket_li_span" style="top:275px;left:122px; width:75px;">
+						<li id="Gw" data-id="" data-name="" data-mascot="" data-region="west"style="" class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Hw" data-id="" data-name="" data-mascot="" data-region="west"style="top:33px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+										
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									west bracket ROUND 3 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					
+					
+					<span id="west_E" class="bracket_li_span" style="top:25px;left:203px; ">
+						<li id="Iw" data-id="" data-name="" data-mascot="" data-region="west"style="" class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Jw" data-id="" data-name="" data-mascot="" data-region="west"style="top:90px; " class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="west_F" class="bracket_li_span" style="top:203px;left:203px; ">
+						<li id="Kw" data-id="" data-name="" data-mascot="" data-region="west"style=" " class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Lw" data-id="" data-name="" data-mascot="" data-region="west"style="top:88px; " class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									west bracket ROUND 4 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="west_G" class="bracket_li_span" style="top:68px;left:122px; ">
+						<li id="Mw" data-id="" data-name="" data-mascot="" data-region="west"style=" " class="int_round4 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Nw" data-id="" data-name="" data-mascot="" data-region="west"style="top:177px; " class="int_round4 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									west bracket ROUND 5 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+<!--
+					<span id="west_H" class="bracket_li_span" style="top:156px;left:120px; height:200px;">
+						<li id="Ow" data-id="Ow" data-name="" data-mascot=""  data-region="west" style=" " class="int_round5 droppable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						
+					</span>
+-->
+					
+					
+					
+					
+					
+				</ul> <!-- END west region -->
+
+				
+
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									east bracket ROUND 1
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+				
+				<ul id="int_eastBracket" class="int_round1 ">
+					<!-- east bracket  ROUND 1 -->
+					<span id="east_1" class="bracket_li_span" style="top:5px;left:805px;">
+						<li id="1e" data-name="" data-id="" data-mascot="" data-region="east" style="top:0px; " class="int_round1 draggable ">east 1</li>
+						<li id="playin_win_eB" data-name="Play-in" data-id="Play-in" data-mascot="Play-in" data-region="east" style="top:14px; " class="int_round1 draggable droppable "><span style="color:#f02f2f;">Play-in</span></li>
+						<!-- <li id="16e" data-name="" data-id="" data-mascot="" data-region="east" style="top:14px; " class="int_round1 draggable ">xxxxx</li> -->
+					</span>
+					<span id="east_2" class="bracket_li_span" style="top:39px;left:805px;">
+						<li id="8e" data-name="" data-id="" data-mascot="" data-region="east" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="9e" data-name="" data-id="" data-mascot="" data-region="east" style="top:16px; " class="int_round1  draggable">xxxxx</li>
+					</span>
+					<span id="east_3" class="bracket_li_span" style="top:87px;left:805px;">
+						<li id="5e" data-name="" data-id="" data-mascot="" data-region="east" style="top:0px; " class="int_round1 draggable">xxxxx</li>
+						<li id="12e" data-name="" data-id="" data-mascot="" data-region="east" style="top:14px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="east_4" class="bracket_li_span" style="top:121px;left:805px;">
+						<li id="4e" data-name="" data-id="" data-mascot="" data-region="east" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="13e" data-name="" data-id="" data-mascot="" data-region="east" style="top:14px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="east_5" class="bracket_li_span" style="top:173px;left:805px;">
+						<li id="6e" data-name="" data-id="" data-mascot="" data-region="east" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="playin_win_eA" data-name="Play-in" data-id="Play-in" data-mascot="Play-in" data-region="east" style="top:14px; " class="int_round1 draggable droppable "><span style="color:#f02f2f;">Play-in</span></li>
+						<!-- <li id="11e" data-name="" data-id="" data-mascot=""  data-region="east"  style="top:14px; " class="int_round1 draggable"></li> -->
+					</span>
+					<span id="east_6" class="bracket_li_span" style="top:208px;left:805px;">
+						<li id="3e"  data-name="" data-id="" data-mascot="" data-region="east" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="14e" data-name="" data-id="" data-mascot="" data-region="east"  style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="east_7" class="bracket_li_span" style="top:255px;left:805px;">
+						<li id="7e" data-name="" data-id="" data-mascot="" data-region="east" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="10e" data-name="" data-id="" data-mascot="" data-region="east" style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="east_8" class="bracket_li_span" style="top:290px;left:805px;">
+						<li id="2e" data-name="" data-id="" data-mascot="" data-region="east" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="15e" data-name="" data-id="" data-mascot="" data-region="east" style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					
+					
+	
+
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									east bracket ROUND 2 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="east_A" class="bracket_li_span" style="top:5px;left:122px; width:75px;">
+						<li id="Ae" data-name="" data-mascot="" data-id="" data-region="east" style="top:5px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Be" data-name="" data-mascot="" data-id="" data-region="east" style="top:37px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="east_B" class="bracket_li_span" style="top:85px;left:122px; width:75px;">
+						<li id="Ce" data-name="" data-mascot="" data-id="" data-region="east" style="top:7px; " class="int_round2  droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="De" data-name="" data-mascot="" data-id=""data-region="east"  style="top:40px; " class="int_round2  droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="east_C" class="bracket_li_span" style="top:175px;left:122px; ">
+						<li id="Ee" data-id="" data-name="" data-mascot="" data-region="east"style="top:3px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Fe" data-id="" data-name="" data-mascot="" data-region="east"style="top:35px; " class="int_round2 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="east_D" class="bracket_li_span" style="top:255px;left:122px; width:75px;">
+						<li id="Ge" data-id="" data-name="" data-mascot="" data-region="east"style="top:5px; " class="int_round2 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="He" data-id="" data-name="" data-mascot="" data-region="east"style="top:41px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+										
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									east bracket ROUND 3 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="east_E" class="bracket_li_span" style="top:23px;left:122px;">
+						<li id="Ie" data-id="" data-name="" data-mascot="" data-region="east"style="top:0px; " class="int_round3 droppable draggable  ">
+							
+							<p class="droppable_pTags">ascas</p>
+							
+						</li>
+						<li id="Je" data-id="" data-name="" data-mascot="" data-region="east"style="top:84px; " class="int_round3 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="east_F" class="bracket_li_span" style="top:190px;left:122px; ">
+						<li id="Ke" data-id="" data-name="" data-mascot="" data-region="east"style="top:3px; " class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Le" data-id="" data-name="" data-mascot="" data-region="east"style="top:85px; " class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									east bracket ROUND 4 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="east_G" class="bracket_li_span" style="top:62px;left:124px; ">
+						<li id="Me" data-id="" data-name="" data-mascot="" data-region="east"style="top:0px; " class="int_round4 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Ne" data-id="" data-name="" data-mascot="" data-region="east"style="top:175px; " class="int_round4 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									east bracket ROUND 5 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+<!--
+					<span id="east_H" class="bracket_li_span" style="top:145px;left:120px; height:200px;">
+						<li id="Oe" data-id="Oe" data-name="" data-mascot=""  data-region="east" style="top:7px; " class="int_round5 droppable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+
+					</span>
+-->
+					
+					
+					
+							
+
+				</ul> <!-- END east region -->
+								
+
+
+
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									south bracket ROUND 1
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+				
+				<ul id="int_southBracket" class="int_round1 ">
+					<!-- south bracket  ROUND 1 -->
+					<span id="south_1" class="bracket_li_span" style="top:5px;left:13px;">
+						<li id="1s" data-name="" data-id="" data-mascot="" data-region="south" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="16s" data-name="" data-id="" data-mascot="" data-region="south" style="top:14px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="south_2" class="bracket_li_span" style="top:39px;left:13px;">
+						<li id="8s" data-name="" data-id="" data-mascot="" data-region="south" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="9s" data-name="" data-id="" data-mascot="" data-region="south" style="top:16px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="south_3" class="bracket_li_span" style="top:87px;left:13px;">
+						<li id="5s" data-name="" data-id="" data-mascot="" data-region="south" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="12s" data-name="" data-id="" data-mascot="" data-region="south" style="top:14px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="south_4" class="bracket_li_span" style="top:122px;left:13px;">
+						<li id="4s" data-name="" data-id="" data-mascot="" data-region="south" style="top:0px; " class="int_round1 draggable ">xxxxx</li>
+						<li id="13s" data-name="" data-id="" data-mascot="" data-region="south" style="top:15px; " class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="south_5" class="bracket_li_span" style="top:172px;left:13px;">
+						<li id="6s" data-name="" data-id="" data-mascot="" data-region="south" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="playin_win_s" data-name="Play-in" data-id="Play-in" data-mascot="Play-in" data-region="south" style="top:14px; " class="int_round1 draggable droppable "><span style="color:#f02f2f;">Play-in</span></li>
+					</span>
+					<span id="south_6" class="bracket_li_span" style="top:207px;left:13px;">
+						<li id="3s" data-name="" data-id="" data-mascot="" data-region="south" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="14s" data-name="" data-id="" data-mascot="" data-region="south" style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="south_7" class="bracket_li_span" style="top:255px;left:13px;">
+						<li id="7s" data-name="" data-id="" data-mascot="" data-region="south" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="10s" data-name="" data-id="" data-mascot="" data-region="south" style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					<span id="south_8" class="bracket_li_span" style="top:291px;left:13px;">
+						<li id="2s" data-name="" data-id="" data-mascot="" data-region="south" style="top:0px;" class="int_round1 draggable ">xxxxx</li>
+						<li id="15s" data-name="" data-id="" data-mascot="" data-region="south" style="top:14px;" class="int_round1 draggable ">xxxxx</li>
+					</span>
+					
+
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									south bracket ROUND 2 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="south_A" class="bracket_li_span" style="top:9px;left:122px; width:75px;">
+						<li id="As" data-name="" data-mascot="" data-id="" data-region="south" style=" " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Bs" data-name="" data-mascot="" data-id="" data-region="south" style="top:32px; " class="int_round2 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="south_B" class="bracket_li_span" style="top:91px;left:122px; width:75px;">
+						<li id="Cs" data-name="" data-mascot="" data-id="" data-region="south" style=" " class="int_round2  droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Ds" data-name="" data-mascot="" data-id="" data-region="south" style="top:32px; " class="int_round2  droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="south_C" class="bracket_li_span" style="top:176px;left:122px; width:75px;">
+						<li id="Es" data-id="" data-name="" data-mascot="" data-region="south"style=" " class="int_round2 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Fs" data-id="" data-name="" data-mascot="" data-region="south"style="top:32px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="south_D" class="bracket_li_span" style="top:258px;left:122px; width:75px;">
+						<li id="Gs" data-id="" data-name="" data-mascot="" data-region="south"style=" " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Hs" data-id="" data-name="" data-mascot="" data-region="south"style="top:35px; " class="int_round2 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+										
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									south bracket ROUND 3 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="south_E" class="bracket_li_span" style="top:22px;left:125px; ">
+						<li id="Is" data-id="" data-name="" data-mascot="" data-region="south"style="" class="int_round3 droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Js" data-id="" data-name="" data-mascot="" data-region="south"style="top:83px; " class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="south_F" class="bracket_li_span" style="top:191px;left:125px; ">
+						<li id="Ks" data-id="" data-name="" data-mascot="" data-region="south"style=" " class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Ls" data-id="" data-name="" data-mascot="" data-region="south"style="top:85px; " class="int_round3 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									south bracket ROUND 4 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+					<span id="south_G" class="bracket_li_span" style="top:61px;left:124px; ">
+						<li id="Ms" data-id="" data-name="" data-mascot="" data-region="south"style=" " class="int_round4 droppable  draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Ns" data-id="" data-name="" data-mascot="" data-region="south"style="top:173px; " class="int_round4 droppable   draggable">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									south bracket ROUND 5 
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+					
+<!--
+					<span id="south_H" class="bracket_li_span" style="top:156px;left:120px; height:200px;">
+						<li id="Os" data-id="Os" data-name="" data-mascot=""  data-region="south" style=" " class="int_round5 droppable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+
+					</span>
+-->
+					
+					
+					
+							
+
+				</ul> <!-- END south region -->
+				
+				<ul id="int_finalFour" class="  ">
+					<span id="final_Four_left" class="bracket_li_span" style="top:3px;" >
+						<li id="Os" data-id="" data-name="" data-mascot="" data-region="south"style="  width:100px;" class=" droppable draggable  ">
+
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Ow" data-id="" data-name="" data-mascot="" data-region="east"style="top:341px; width:100px;" class=" droppable draggable  ">
+
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+					<span id="final_Four_right" class="bracket_li_span" style="top:3px;" >
+
+						<li id="Oe" data-id="" data-name="" data-mascot="" data-region="west"style=" left:124px; width:100px;" class=" droppable draggable  ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="Omw" data-id="" data-name="" data-mascot="" data-region="midwest"style="top:341px;left:124px; width:100px;" class=" droppable draggable ">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+					
+				</ul> <!-- END Finals -->
+				
+				
+				<ul id="int_finalChampionship" class="  ">
+					<span id="final_bout" class="bracket_li_span" style="top:3px;">
+						<li id="final_A" data-id="" data-name="" data-mascot="" data-region=""style="left:130px; width:100px;" class=" droppable draggable">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+						<li id="final_B" data-id="" data-name="" data-mascot="" data-region=""style=" width:100px;" class=" droppable draggable">
+							
+							<p class="droppable_pTags"></p>
+							
+						</li>
+					</span>
+				</ul> <!-- END Finals -->
+				
+				
+				
+				<ul id="int_Champion" class="  ">
+					<span id="champion" class="bracket_li_span" >
+						<li id="champ" data-id="" data-name="" data-mascot="" data-region=""style="" class=" droppable boldMe">
+							<p class="droppable_pTags"></p>
+						</li>
+						
+					</span>
+				</ul> <!-- END Finals -->
+				
+				
+					
+					
+					<!-- 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////					
+									
+									Play-in games
+									
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////									
+					-->
+				
+				<div id="playin_games" class="bracket_li_span" style=" position:absolute; top:645px;left:252px;">
+					<ul>
+						<span id="playin_s">
+							<li id="17s" data-id="" data-name="" data-mascot="" data-region="south"style=" " class="int_round1 draggable ">
+								
+								<p class="droppable_pTags">17s</p>
+								
+							</li>
+							<li id="18s" data-id="" data-name="" data-mascot="" data-region="south"style="top:15px;" class="int_round1 draggable">
+								
+								<p class="droppable_pTags">18s</p>
+								
+							</li>
+						</span>	
+						
+						
+						
+						<span id="playin_w">
+							<li id="17w" data-id="" data-name="" data-mascot="" data-region="west"style=" left:105px;" class="int_round1 draggable ">
+								
+								<p class="droppable_pTags">17w</p>
+								
+							</li>
+							<li id="18w" data-id="" data-name="" data-mascot="" data-region="west"style="top:15px; left:105px; " class="int_round1 draggable">
+								
+								<p class="droppable_pTags">18w</p>
+								
+							</li>
+						</span>	
+						
+						<span id="playin_e_A">
+							<li id="17e" data-id="" data-name="" data-mascot="" data-region="midwest"style=" left:219px;" class="int_round1 draggable ">
+								
+								<p class="droppable_pTags">17e</p>
+								
+							</li>
+							<li id="18e" data-id="" data-name="" data-mascot="" data-region="midwest"style="top:15px; left:219px;" class="int_round1 draggable">
+								
+								<p class="droppable_pTags">18e</p>
+								
+							</li>
+						</span>
+						
+						<span id="playin_e_B">
+							<li id="19e" data-id="" data-name="" data-mascot="" data-region="east"style=" left:324px;" class="int_round1 draggable ">
+								
+								<p class="droppable_pTags">19e</p>
+								
+							</li>
+							<li id="20e" data-id="" data-name="" data-mascot="" data-region="east"style="top:15px; left:324px;" class="int_round1 draggable">
+								
+								<p class="droppable_pTags">20e</p>
+								
+							</li>
+						</span>
+					</ul>
+				</div>						
+				
+			</div>
+			
+		
+			
+			<div style="clear:both;"></div>
+			
+			<div class="standardFooter_Slim">
+				<!-- <p class="sourceline">Analysis and research: Matt Glenesk, Scott Horner / IndyStar</p> -->
+				<p class="sourceline">Produced by: <a href="http://www.twitter.com/campbell_m" target="_blank"/>Michael Campbell</a> / IndyStar</p>
+			</div>
+
+
+		</div> <!-- END interactive int_whoAreYou_container -->
+		
+
+		
+		
+		<script type="text/javascript">
+			
+			
+			$(document).ready(function() {
+			
+				$(".droppable_pTags").html("Drag team here");	
+				
+				$("#int_matchupFocus").hide(0);
+				
+				$(".bracket_li_span li").not(".int_round1").addClass("notSelected");	
+				
+				$("#printMyBracket").click(function() {	window.print();	});
+				
+				$("#int_NCAA_Clear_bracket").click(function() {	location.reload();	});
+				
+				var myTeamSelects = "teamName"; // teamName, teamMascot, teamColors
+			
+				// Load the data.       
+	    		$.getJSON('ncaa_bracket_B.json', function(data) {	
+	    				    			
+	    			var myLength = data.NCAA_tourney.length;	    			
+					
+					var ncaaCount = 0;
+					
+	    			for (var i=0; i < myLength; i++) {	    				
+	    				
+	    				var myNCAA_seed = data.NCAA_tourney[i]["id"];
+	    				
+	    				var ncaaTeamName = data.NCAA_tourney[i]["name"];
+	    				var ncaaTeamMascot = data.NCAA_tourney[i]["mascot"];
+	    				var ncaaTeamRegion = data.NCAA_tourney[i]["region"];
+						
+						
+						var nameLen = ncaaTeamName.length;
+						
+						if (nameLen >= 16 /* "Virginia Commonwealth" */ ) {
+							$("#"+myNCAA_seed).attr("data-name",ncaaTeamName).attr("data-id",myNCAA_seed).attr("data-mascot",ncaaTeamMascot).attr("data-region",ncaaTeamRegion).css("font-size",".66em").html(ncaaTeamName);
+							
+						} else {
+							$("#"+myNCAA_seed).attr("data-name",ncaaTeamName).attr("data-id",myNCAA_seed).attr("data-mascot",ncaaTeamMascot).attr("data-region",ncaaTeamRegion).html(ncaaTeamName);
+							
+						}
+						
+/*
+	    				$("#"+myNCAA_seed).attr("data-name",ncaaTeamName).html(ncaaTeamName); 
+	    				$("#"+myNCAA_seed).attr("data-name",ncaaTeamName).html(ncaaTeamName); 
+	    				$("#"+myNCAA_seed).attr("data-name",ncaaTeamName).html(ncaaTeamName);
+*/
+						
+						
+	    			}
+		    		
+	    			
+	    			
+	    		});
+	    		
+
+
+	    		
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 		
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 		
+
+				
+				
+				Setting up the match-up focus box when double-clicking any team - calling that team's data from the JSON AND their opponent from the bracket
+
+
+
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 		
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */		
+	    		
+/*
+	    		$("#int_ncaaBracket li").not("#champ").dblclick(function() {
+	    			
+	    			var thisID = $(this).attr("data-id");
+	    			var opponentID = $(this).siblings().attr("data-id");
+	    				var opponentNotChosen = $(this).siblings().html();	    				
+					
+					$("#matchup_box .ncaa_teamfocus:nth-child(1)").html("");
+					$("#matchup_box .ncaa_teamfocus:nth-child(2)").html("");
+					
+					
+	    			// Load the data.       
+	    			$.getJSON('ncaa_bracket_B.json', function(data) {
+	    				
+	    				var myLength = data.NCAA_tourney.length;
+	    				
+	    				for (var i=0; i < myLength; i++) {
+	    					
+	    					var this_seed = data.NCAA_tourney[i]["id"];
+	    					var this_team = data.NCAA_tourney[i]["name"];
+	    					var this_mascot = data.NCAA_tourney[i]["mascot"];
+	    					var this_conf = data.NCAA_tourney[i]["conference"];
+	    					var this_record = data.NCAA_tourney[i]["record"];
+	    					var this_analysis = data.NCAA_tourney[i]["analysis"];
+	    					var this_funny = data.NCAA_tourney[i]["funQuip"];
+	    					var this_colorA = data.NCAA_tourney[i]["color_A"];
+	    					var this_colorB = data.NCAA_tourney[i]["color_B"];
+	    					var this_colorC = data.NCAA_tourney[i]["color_C"];
+	    					var this_region = data.NCAA_tourney[i]["region"];
+	    					
+	    					
+	    					var orbTeam = this_team.toUpperCase();
+							var orbMascot = this_mascot.toUpperCase();
+	    				
+	    					if ( this_seed === thisID) { 
+	    						$("#matchup_box .ncaa_teamfocus:nth-child(1)").html("<img src='images/logos/orbs/ORB_"+orbTeam+"_"+orbMascot+".jpg' alt='ORB Logo "+this_team+" "+this_mascot+"' width='50' height='50' /><h3 style='position:absolute; top:0px; left:60px;'>"+this_team+" </h3><p class='ncaa_record_conf'><span class='matchup_conf'>"+this_conf+"</span><span class='matchup_record'>"+this_record+"</span></p><div style='clear:both;'></div><span id='schoolColors'><p  class='matchup_analysis'><strong>School colors: </strong> "+this_colorA+" "+this_colorB+" "+this_colorC+"</p></span><p class='matchup_analysis'><strong>Mascot:</strong> "+this_mascot+"</p><p class='bring_theFunny'>"+this_funny+" </p><p class='matchup_analysis quickFacts'><strong>Quick Facts:</strong><br />"+this_analysis+"</p> ");								
+	    					}
+	    					
+	    					
+	    					if ( this_seed === opponentID) { 
+	    						
+	    						$("#matchup_box .ncaa_teamfocus:nth-child(2)").html("<img src='images/logos/orbs/ORB_"+orbTeam+"_"+orbMascot+".jpg' alt='ORB Logo "+this_team+" "+this_mascot+"' width='50' height='50' /><h3 style='position:absolute; top:0px; left:60px;'>"+this_team+" </h3><p class='ncaa_record_conf'><span class='matchup_conf'>"+this_conf+"</span><span class='matchup_record'>"+this_record+"</span></p><div style='clear:both;'></div><span id='schoolColors'><p  class='matchup_analysis'><strong>School colors: </strong> "+this_colorA+" "+this_colorB+" "+this_colorC+"</p></span><p class='matchup_analysis'><strong>Mascot:</strong> "+this_mascot+"</p><p class='bring_theFunny'>"+this_funny+" </p><p class='matchup_analysis quickFacts'><strong>Quick Facts:</strong><br />"+this_analysis+"</p>  ");								
+	    					} 
+	    					
+	    					if ( opponentNotChosen === '<p class="droppable_pTags">Drag team here</p>') {
+	    						
+	    						
+	    						
+	    						$("#matchup_box .ncaa_teamfocus:nth-child(2)").html(" ");
+	    					}
+	    					
+	    				}
+	    				
+	    			});
+	    			
+	    			
+	    			$("#int_matchupFocus").show(0);
+	    			
+	    			$("#matchup_box input").click(function() { $("#int_matchupFocus").hide(0); })
+	    			
+	    		});
+*/
+				
+
+
+		/* ------------ Switch bracket view to mascot name ------------ */				
+
+				$("#int_NCAA_Mascot_bracket").click(function() { 					
+					MascotBracket();					
+				});
+				
+				
+				function MascotBracket() {
+					
+					myTeamSelects = "teamMascot"; 					
+						
+					$(".bracket_li_span li").not(".notSelected").each(function() {
+						
+						var ncaaTeamViewSwitch = $(this).attr("data-mascot");
+						
+						$(this).html(ncaaTeamViewSwitch);						
+						
+					});
+					
+					$("li").each(function() {
+												
+						var nameLength = $(this).html();
+						
+						nameLength = nameLength.length;
+						
+						if (nameLength >= 16 ) {
+							$(this).css("font-size",".66em");							
+						} else {
+							$(this).css("font-size",".75em");
+						}
+						$("#champ").css("font-size","1em");
+						
+
+						
+					});
+					
+
+
+				}
+
+		/* ------------ Switch bracket view to team name ------------ */				
+				
+				$("#int_NCAA_teamName_bracket").click(function() { 
+					
+					teamBracket();
+					
+				});
+
+				function teamBracket() {
+					
+					myTeamSelects = "teamName"; 					
+						
+					$(".bracket_li_span li").not(".notSelected").each(function() {
+						
+						var ncaaTeamViewSwitch = $(this).attr("data-name");
+						
+						$(this).html(ncaaTeamViewSwitch);						
+						
+					});
+					
+					$("li").each(function() {
+												
+						var nameLength = $(this).html();
+						
+						nameLength = nameLength.length;
+						
+						if (nameLength >= 16 ) {
+							$(this).css("font-size",".66em");							
+						} else {
+							$(this).css("font-size",".75em");
+						}
+						$("#champ").css("font-size","1em");
+						
+					});
+					
+
+				}
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 		
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 		
+
+				
+				
+				Randomizing your selections
+
+
+
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 		
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */	
+
+				
+				$("#int_NCAA_GetLucky_bracket").click(function() {  
+					
+					$("li").removeClass("boldMe");
+					$("#champ").addClass("boldMe");				
+					
+					$(".bracket_li_span li").removeClass("notSelected");
+					
+					
+					
+					
+					if (myTeamSelects === "teamName") {
+						myTeamSelects = "data-name";
+						myTeamSelects_B = "data-mascot";
+						myTeamSelects_id = "data-id";
+												
+					} else if (myTeamSelects === "teamMascot") {
+						myTeamSelects = "data-mascot";
+						myTeamSelects_B = "data-name";
+						myTeamSelects_id = "data-id";
+					}
+					
+					
+						roundOne_results();
+					
+					function roundOne_results() {
+						
+						var myMath_1 = Math.floor((Math.random()*10)+1);
+						var myMath_2 = Math.floor((Math.random()*10)+1);
+						var myMath_3 = Math.floor((Math.random()*10)+1);
+						var myMath_4 = Math.floor((Math.random()*10)+1);
+						var myMath_5 = Math.floor((Math.random()*10)+1);
+						var myMath_6 = Math.floor((Math.random()*10)+1);
+						var myMath_7 = Math.floor((Math.random()*10)+1);
+						var myMath_8 = Math.floor((Math.random()*10)+1);
+						
+						var myMath_9 = Math.floor((Math.random()*10)+1);
+						var myMath_10 = Math.floor((Math.random()*10)+1);
+						var myMath_11 = Math.floor((Math.random()*10)+1);
+						var myMath_12 = Math.floor((Math.random()*10)+1);
+						var myMath_13 = Math.floor((Math.random()*10)+1);
+						var myMath_14 = Math.floor((Math.random()*10)+1);
+						var myMath_15 = Math.floor((Math.random()*10)+1);
+						var myMath_16 = Math.floor((Math.random()*10)+1);
+						
+						var myMath_17 = Math.floor((Math.random()*10)+1);
+						var myMath_18 = Math.floor((Math.random()*10)+1);
+						var myMath_19 = Math.floor((Math.random()*10)+1);
+						var myMath_20 = Math.floor((Math.random()*10)+1);
+						var myMath_21 = Math.floor((Math.random()*10)+1);
+						var myMath_22 = Math.floor((Math.random()*10)+1);
+						var myMath_23 = Math.floor((Math.random()*10)+1);
+						var myMath_24 = Math.floor((Math.random()*10)+1);
+						
+						var myMath_25 = Math.floor((Math.random()*10)+1);
+						var myMath_26 = Math.floor((Math.random()*10)+1);
+						var myMath_27 = Math.floor((Math.random()*10)+1);
+						var myMath_28 = Math.floor((Math.random()*10)+1);
+						var myMath_29 = Math.floor((Math.random()*10)+1);
+						var myMath_30 = Math.floor((Math.random()*10)+1);
+						var myMath_31 = Math.floor((Math.random()*10)+1);
+						var myMath_32 = Math.floor((Math.random()*10)+1);
+						
+						if (myMath_1 <=5) { myMath_1 = 1; } else if (myMath_1 <=10 && myMath_1 > 5) { myMath_1 = 2; }
+						if (myMath_2 <=5) { myMath_2 = 1; } else if (myMath_2 <=10 && myMath_2 > 5) { myMath_2 = 2; }
+						if (myMath_3 <=5) { myMath_3 = 1; } else if (myMath_3 <=10 && myMath_3 > 5) { myMath_3 = 2; }
+						if (myMath_4 <=5) { myMath_4 = 1; } else if (myMath_4 <=10 && myMath_4 > 5) { myMath_4 = 2; }
+						if (myMath_5 <=5) { myMath_5 = 1; } else if (myMath_5 <=10 && myMath_5 > 5) { myMath_5 = 2; }
+						if (myMath_6 <=5) { myMath_6 = 1; } else if (myMath_6 <=10 && myMath_6 > 5) { myMath_6 = 2; }
+						if (myMath_7 <=5) { myMath_7 = 1; } else if (myMath_7 <=10 && myMath_7 > 5) { myMath_7 = 2; }
+						if (myMath_8 <=5) { myMath_8 = 1; } else if (myMath_8 <=10 && myMath_8 > 5) { myMath_8 = 2; }
+						
+						if (myMath_9 <=5) { myMath_9 = 1; } else if (myMath_9 <=10 && myMath_9 > 5) { myMath_9 = 2; }
+						if (myMath_10 <=5) { myMath_10 = 1; } else if (myMath_10 <=10 && myMath_10 > 5) { myMath_10 = 2; }
+						if (myMath_11 <=5) { myMath_11 = 1; } else if (myMath_11 <=10 && myMath_11 > 5) { myMath_11 = 2; }
+						if (myMath_12 <=5) { myMath_12 = 1; } else if (myMath_12 <=10 && myMath_12 > 5) { myMath_12 = 2; }
+						if (myMath_13 <=5) { myMath_13 = 1; } else if (myMath_13 <=10 && myMath_13 > 5) { myMath_13 = 2; }
+						if (myMath_14 <=5) { myMath_14 = 1; } else if (myMath_14 <=10 && myMath_14 > 5) { myMath_14 = 2; }
+						if (myMath_15 <=5) { myMath_15 = 1; } else if (myMath_15 <=10 && myMath_15 > 5) { myMath_15 = 2; }
+						if (myMath_16 <=5) { myMath_16 = 1; } else if (myMath_16 <=10 && myMath_16 > 5) { myMath_16 = 2; }
+						
+						if (myMath_17 <=5) { myMath_17 = 1; } else if (myMath_17 <=10 && myMath_17 > 5) { myMath_17 = 2; }
+						if (myMath_18 <=5) { myMath_18 = 1; } else if (myMath_18 <=10 && myMath_18 > 5) { myMath_18 = 2; }
+						if (myMath_19 <=5) { myMath_19 = 1; } else if (myMath_19 <=10 && myMath_19 > 5) { myMath_19 = 2; }
+						if (myMath_20 <=5) { myMath_20 = 1; } else if (myMath_20 <=10 && myMath_20 > 5) { myMath_20 = 2; }
+						if (myMath_21 <=5) { myMath_21 = 1; } else if (myMath_21 <=10 && myMath_21 > 5) { myMath_21 = 2; }
+						if (myMath_22 <=5) { myMath_22 = 1; } else if (myMath_22 <=10 && myMath_22 > 5) { myMath_22 = 2; }
+						if (myMath_23 <=5) { myMath_23 = 1; } else if (myMath_23 <=10 && myMath_23 > 5) { myMath_23 = 2; }
+						if (myMath_24 <=5) { myMath_24 = 1; } else if (myMath_24 <=10 && myMath_24 > 5) { myMath_24 = 2; }
+						
+						if (myMath_25 <=5) { myMath_25 = 1; } else if (myMath_25 <=10 && myMath_25 > 5) { myMath_25 = 2; }
+						if (myMath_26 <=5) { myMath_26 = 1; } else if (myMath_26 <=10 && myMath_26 > 5) { myMath_26 = 2; }
+						if (myMath_27 <=5) { myMath_27 = 1; } else if (myMath_27 <=10 && myMath_27 > 5) { myMath_27 = 2; }
+						if (myMath_28 <=5) { myMath_28 = 1; } else if (myMath_28 <=10 && myMath_28 > 5) { myMath_28 = 2; }
+						if (myMath_29 <=5) { myMath_29 = 1; } else if (myMath_29 <=10 && myMath_29 > 5) { myMath_29 = 2; }
+						if (myMath_30 <=5) { myMath_30 = 1; } else if (myMath_30 <=10 && myMath_30 > 5) { myMath_30 = 2; }
+						if (myMath_31 <=5) { myMath_31 = 1; } else if (myMath_31 <=10 && myMath_31 > 5) { myMath_31 = 2; }
+						if (myMath_32 <=5) { myMath_32 = 1; } else if (myMath_32 <=10 && myMath_32 > 5) { myMath_32 = 2; }
+						
+						
+
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									Playin game winners
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+					// east - game A
+						var playin_e_A = $("#playin_e_A li:nth-child(" + myMath_2 + ")").attr(myTeamSelects);
+						var playin_e_Ab = $("#playin_e_A li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_B);
+						var playin_e_Aid = $("#playin_e_A li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_id);
+							$("#playin_win_eA").attr(myTeamSelects, playin_e_A ).attr(myTeamSelects_id, playin_e_Aid ).attr(myTeamSelects_B, playin_e_Ab ).html(playin_e_A);
+					
+					// east - game B		
+						var playin_e_B = $("#playin_e_B li:nth-child(" + myMath_4 + ")").attr(myTeamSelects);
+						var playin_e_Bb = $("#playin_e_B li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_B);
+						var playin_e_Bid = $("#playin_e_B li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_id);
+							$("#playin_win_eB").attr(myTeamSelects, playin_e_B ).attr(myTeamSelects_id, playin_e_Bid ).attr(myTeamSelects_B, playin_e_Bb ).html(playin_e_B);	
+							
+							
+					// West 
+						var playin_w = $("#playin_w li:nth-child(" + myMath_6 + ")").attr(myTeamSelects);
+						var playin_wb = $("#playin_w li:nth-child(" + myMath_6 + ")").attr(myTeamSelects_B);
+						var playin_wid = $("#playin_w li:nth-child(" + myMath_6 + ")").attr(myTeamSelects_id);
+							$("#playin_win_w").attr(myTeamSelects, playin_w ).attr(myTeamSelects_id, playin_wid ).attr(myTeamSelects_B, playin_wb ).html(playin_w);
+							
+							
+					// South
+						var playin_s = $("#playin_s li:nth-child(" + myMath_8 + ")").attr(myTeamSelects);
+						var playin_sb = $("#playin_s li:nth-child(" + myMath_8 + ")").attr(myTeamSelects_B);
+						var playin_sid = $("#playin_s li:nth-child(" + myMath_8 + ")").attr(myTeamSelects_id);
+							$("#playin_win_s").attr(myTeamSelects, playin_s ).attr(myTeamSelects_id, playin_sid ).attr(myTeamSelects_B, playin_sb ).html(playin_s);
+							
+						
+						
+
+				firstRoundPlayin();		
+						
+				function firstRoundPlayin() {	
+	
+							
+				/* ---------------------------------------------------------------------------------------------------------  
+				
+										
+										Midwest region
+				
+				
+				---------------------------------------------------------------------------------------------------------  */
+				
+							var mwest_1 = $("#mwest_1 li:nth-child(" + myMath_1 + ")").attr(myTeamSelects);
+							var mwest_1b = $("#mwest_1 li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_B);
+							var mwest_1id = $("#mwest_1 li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_id);
+								$("#Amw").attr(myTeamSelects, mwest_1 ).attr(myTeamSelects_id, mwest_1id ).attr(myTeamSelects_B, mwest_1b ).html(mwest_1);
+		
+							var mwest_2 = $("#mwest_2 li:nth-child(" + myMath_2 + ")").attr(myTeamSelects);	
+							var mwest_2b = $("#mwest_2 li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_B);
+							var mwest_2id = $("#mwest_2 li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_id);
+								$("#Bmw").attr(myTeamSelects, mwest_2 ).attr(myTeamSelects_id, mwest_2id ).attr(myTeamSelects_B, mwest_2b ).html(mwest_2);
+								
+							var mwest_3 = $("#mwest_3 li:nth-child(" + myMath_3 + ")").attr(myTeamSelects);
+							var mwest_3b = $("#mwest_3 li:nth-child(" + myMath_3 + ")").attr(myTeamSelects_B);
+							var mwest_3id = $("#mwest_3 li:nth-child(" + myMath_3 + ")").attr(myTeamSelects_id);
+								$("#Cmw").attr(myTeamSelects, mwest_3 ).attr(myTeamSelects_id, mwest_3id ).attr(myTeamSelects_B, mwest_3b ).html(mwest_3);
+		
+							var mwest_4 = $("#mwest_4 li:nth-child(" + myMath_4 + ")").attr(myTeamSelects);	
+							var mwest_4b = $("#mwest_4 li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_B);
+							var mwest_4id = $("#mwest_4 li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_id);
+								$("#Dmw").attr(myTeamSelects, mwest_4 ).attr(myTeamSelects_id, mwest_4id ).attr(myTeamSelects_B, mwest_4b ).html(mwest_4);
+							
+							var mwest_5 = $("#mwest_5 li:nth-child(" + myMath_5 + ")").attr(myTeamSelects);
+							var mwest_5b = $("#mwest_5 li:nth-child(" + myMath_5 + ")").attr(myTeamSelects_B);
+							var mwest_5id = $("#mwest_5 li:nth-child(" + myMath_5 + ")").attr(myTeamSelects_id);	
+								$("#Emw").attr(myTeamSelects, mwest_5 ).attr(myTeamSelects_id, mwest_5id ).attr(myTeamSelects_B, mwest_5b ).html(mwest_5);
+		
+							var mwest_6 = $("#mwest_6 li:nth-child(" + myMath_6 + ")").attr(myTeamSelects);	
+							var mwest_6b = $("#mwest_6 li:nth-child(" + myMath_6 + ")").attr(myTeamSelects_B);	
+							var mwest_6id = $("#mwest_6 li:nth-child(" + myMath_6 + ")").attr(myTeamSelects_id);
+								$("#Fmw").attr(myTeamSelects, mwest_6 ).attr(myTeamSelects_id, mwest_6id ).attr(myTeamSelects_B, mwest_6b ).html(mwest_6);	
+		
+							var mwest_7 = $("#mwest_7 li:nth-child(" + myMath_7 + ")").attr(myTeamSelects);
+							var mwest_7b = $("#mwest_7 li:nth-child(" + myMath_7 + ")").attr(myTeamSelects_B);
+							var mwest_7id = $("#mwest_7 li:nth-child(" + myMath_7 + ")").attr(myTeamSelects_id);	
+								$("#Gmw").attr(myTeamSelects, mwest_7 ).attr(myTeamSelects_id, mwest_7id ).attr(myTeamSelects_B, mwest_7b ).html(mwest_7);
+		
+							var mwest_8 = $("#mwest_8 li:nth-child(" + myMath_8 + ")").attr(myTeamSelects);	
+							var mwest_8b = $("#mwest_8 li:nth-child(" + myMath_8 + ")").attr(myTeamSelects_B);	
+							var mwest_8id = $("#mwest_8 li:nth-child(" + myMath_8 + ")").attr(myTeamSelects_id);
+								$("#Hmw").attr(myTeamSelects, mwest_8 ).attr(myTeamSelects_id, mwest_8id ).attr(myTeamSelects_B, mwest_8b ).html(mwest_8);
+								
+								
+				/* ---------------------------------------------------------------------------------------------------------  
+				
+										
+										West region
+				
+				
+				---------------------------------------------------------------------------------------------------------  */
+				
+					
+							var west_1 = $("#west_1 li:nth-child(" + myMath_9 + ")").attr(myTeamSelects);
+							var west_1b = $("#west_1 li:nth-child(" + myMath_9 + ")").attr(myTeamSelects_B);
+							var west_1id = $("#west_1 li:nth-child(" + myMath_9 + ")").attr(myTeamSelects_id);
+								$("#Aw").attr(myTeamSelects, west_1 ).attr(myTeamSelects_id, west_1id ).attr(myTeamSelects_B, west_1b ).html(west_1);
+		
+							var west_2 = $("#west_2 li:nth-child(" + myMath_10 + ")").attr(myTeamSelects);	
+							var west_2b = $("#west_2 li:nth-child(" + myMath_10 + ")").attr(myTeamSelects_B);
+							var west_2id = $("#west_2 li:nth-child(" + myMath_10 + ")").attr(myTeamSelects_id);
+								$("#Bw").attr(myTeamSelects, west_2 ).attr(myTeamSelects_id, west_2id ).attr(myTeamSelects_B, west_2b ).html(west_2);
+								
+							var west_3 = $("#west_3 li:nth-child(" + myMath_11 + ")").attr(myTeamSelects);
+							var west_3b = $("#west_3 li:nth-child(" + myMath_11 + ")").attr(myTeamSelects_B);
+							var west_3id = $("#west_3 li:nth-child(" + myMath_11 + ")").attr(myTeamSelects_id);	
+								$("#Cw").attr(myTeamSelects, west_3 ).attr(myTeamSelects_id, west_3id ).attr(myTeamSelects_B, west_3b ).html(west_3);
+		
+							var west_4 = $("#west_4 li:nth-child(" + myMath_12 + ")").attr(myTeamSelects);	
+							var west_4b = $("#west_4 li:nth-child(" + myMath_12 + ")").attr(myTeamSelects_B);
+							var west_4id = $("#west_4 li:nth-child(" + myMath_12 + ")").attr(myTeamSelects_id);	
+								$("#Dw").attr(myTeamSelects, west_4 ).attr(myTeamSelects_id, west_4id ).attr(myTeamSelects_B, west_4b ).html(west_4);
+							
+							var west_5 = $("#west_5 li:nth-child(" + myMath_13 + ")").attr(myTeamSelects);
+							var west_5b = $("#west_5 li:nth-child(" + myMath_13 + ")").attr(myTeamSelects_B);
+							var west_5id = $("#west_5 li:nth-child(" + myMath_13 + ")").attr(myTeamSelects_id);
+								$("#Ew").attr(myTeamSelects, west_5 ).attr(myTeamSelects_id, west_5id ).attr(myTeamSelects_B, west_5b ).html(west_5);
+		
+							var west_6 = $("#west_6 li:nth-child(" + myMath_14 + ")").attr(myTeamSelects);	
+							var west_6b = $("#west_6 li:nth-child(" + myMath_14 + ")").attr(myTeamSelects_B);
+							var west_6id = $("#west_6 li:nth-child(" + myMath_14 + ")").attr(myTeamSelects_id);	
+								$("#Fw").attr(myTeamSelects, west_6 ).attr(myTeamSelects_id, west_6id ).attr(myTeamSelects_B, west_6b ).html(west_6);	
+		
+							var west_7 = $("#west_7 li:nth-child(" + myMath_15 + ")").attr(myTeamSelects);
+							var west_7b = $("#west_7 li:nth-child(" + myMath_15 + ")").attr(myTeamSelects_B);
+							var west_7id = $("#west_7 li:nth-child(" + myMath_15 + ")").attr(myTeamSelects_id);	
+								$("#Gw").attr(myTeamSelects, west_7 ).attr(myTeamSelects_id, west_7id ).attr(myTeamSelects_B, west_7b ).html(west_7);
+		
+							var west_8 = $("#west_8 li:nth-child(" + myMath_16 + ")").attr(myTeamSelects);	
+							var west_8b = $("#west_8 li:nth-child(" + myMath_16 + ")").attr(myTeamSelects_B);
+							var west_8id = $("#west_8 li:nth-child(" + myMath_16 + ")").attr(myTeamSelects_id);	
+								$("#Hw").attr(myTeamSelects, west_8 ).attr(myTeamSelects_id, west_8id ).attr(myTeamSelects_B, west_8b ).html(west_8);
+								
+				/* ---------------------------------------------------------------------------------------------------------  
+				
+										
+										East region
+				
+				
+				---------------------------------------------------------------------------------------------------------  */				
+								
+							var east_1 = $("#east_1 li:nth-child(" + myMath_17 + ")").attr(myTeamSelects);
+							var east_1b = $("#east_1 li:nth-child(" + myMath_17 + ")").attr(myTeamSelects_B);
+							var east_1id = $("#east_1 li:nth-child(" + myMath_17 + ")").attr(myTeamSelects_id);
+								$("#Ae").attr(myTeamSelects, east_1 ).attr(myTeamSelects_id, east_1id ).attr(myTeamSelects_B, east_1b ).html(east_1);
+		
+							var east_2 = $("#east_2 li:nth-child(" + myMath_18 + ")").attr(myTeamSelects);
+							var east_2b = $("#east_2 li:nth-child(" + myMath_18 + ")").attr(myTeamSelects_B);
+							var east_2id = $("#east_2 li:nth-child(" + myMath_18 + ")").attr(myTeamSelects_id);	
+								$("#Be").attr(myTeamSelects, east_2 ).attr(myTeamSelects_id, east_2id ).attr(myTeamSelects_B, east_2b ).html(east_2);
+								
+							var east_3 = $("#east_3 li:nth-child(" + myMath_19 + ")").attr(myTeamSelects);
+							var east_3b = $("#east_3 li:nth-child(" + myMath_19 + ")").attr(myTeamSelects_B);
+							var east_3id = $("#east_3 li:nth-child(" + myMath_19 + ")").attr(myTeamSelects_id);
+								$("#Ce").attr(myTeamSelects, east_3 ).attr(myTeamSelects_id, east_3id ).attr(myTeamSelects_B, east_3b ).html(east_3);
+		
+							var east_4 = $("#east_4 li:nth-child(" + myMath_20 + ")").attr(myTeamSelects);
+							var east_4b = $("#east_4 li:nth-child(" + myMath_20 + ")").attr(myTeamSelects_B);
+							var east_4id = $("#east_4 li:nth-child(" + myMath_20 + ")").attr(myTeamSelects_id);	
+								$("#De").attr(myTeamSelects, east_4 ).attr(myTeamSelects_id, east_4id ).attr(myTeamSelects_B, east_4b ).html(east_4);
+							
+							var east_5 = $("#east_5 li:nth-child(" + myMath_21 + ")").attr(myTeamSelects);
+							var east_5b = $("#east_5 li:nth-child(" + myMath_21 + ")").attr(myTeamSelects_B);
+							var east_5id = $("#east_5 li:nth-child(" + myMath_21 + ")").attr(myTeamSelects_id);
+								$("#Ee").attr(myTeamSelects, east_5 ).attr(myTeamSelects_id, east_5id ).attr(myTeamSelects_B, east_5b ).html(east_5);
+		
+							var east_6 = $("#east_6 li:nth-child(" + myMath_22 + ")").attr(myTeamSelects);	
+							var east_6b = $("#east_6 li:nth-child(" + myMath_22 + ")").attr(myTeamSelects_B);
+							var east_6id = $("#east_6 li:nth-child(" + myMath_22 + ")").attr(myTeamSelects_id);
+								$("#Fe").attr(myTeamSelects, east_6 ).attr(myTeamSelects_id, east_6id ).attr(myTeamSelects_B, east_6b ).html(east_6);	
+		
+							var east_7 = $("#east_7 li:nth-child(" + myMath_23 + ")").attr(myTeamSelects);
+							var east_7b = $("#east_7 li:nth-child(" + myMath_23 + ")").attr(myTeamSelects_B);
+							var east_7id = $("#east_7 li:nth-child(" + myMath_23 + ")").attr(myTeamSelects_id);
+								$("#Ge").attr(myTeamSelects, east_7 ).attr(myTeamSelects_id, east_7id ).attr(myTeamSelects_B, east_7b ).html(east_7);
+		
+							var east_8 = $("#east_8 li:nth-child(" + myMath_24 + ")").attr(myTeamSelects);
+							var east_8b = $("#east_8 li:nth-child(" + myMath_24 + ")").attr(myTeamSelects_B);	
+							var east_8id = $("#east_8 li:nth-child(" + myMath_24 + ")").attr(myTeamSelects_id);
+								$("#He").attr(myTeamSelects, east_8 ).attr(myTeamSelects_id, east_8id ).attr(myTeamSelects_B, east_8b ).html(east_8);
+								
+								
+				/* ---------------------------------------------------------------------------------------------------------  
+				
+										
+										South region
+				
+				
+				---------------------------------------------------------------------------------------------------------  */				
+								
+							var south_1 = $("#south_1 li:nth-child(" + myMath_25 + ")").attr(myTeamSelects);
+							var south_1b = $("#south_1 li:nth-child(" + myMath_25 + ")").attr(myTeamSelects_B);
+							var south_1id = $("#south_1 li:nth-child(" + myMath_25 + ")").attr(myTeamSelects_id);
+								$("#As").attr(myTeamSelects, south_1 ).attr(myTeamSelects_id, south_1id ).attr(myTeamSelects_B, south_1b ).html(south_1);
+		
+							var south_2 = $("#south_2 li:nth-child(" + myMath_26 + ")").attr(myTeamSelects);
+							var south_2b = $("#south_2 li:nth-child(" + myMath_26 + ")").attr(myTeamSelects_B);	
+							var south_2id = $("#south_2 li:nth-child(" + myMath_26 + ")").attr(myTeamSelects_id);
+								$("#Bs").attr(myTeamSelects, south_2 ).attr(myTeamSelects_id, south_2id ).attr(myTeamSelects_B, south_2b ).html(south_2);
+								
+							var south_3 = $("#south_3 li:nth-child(" + myMath_27 + ")").attr(myTeamSelects);
+							var south_3b = $("#south_3 li:nth-child(" + myMath_27 + ")").attr(myTeamSelects_B);
+							var south_3id = $("#south_3 li:nth-child(" + myMath_27 + ")").attr(myTeamSelects_id);
+								$("#Cs").attr(myTeamSelects, south_3 ).attr(myTeamSelects_id, south_3id ).attr(myTeamSelects_B, south_3b ).html(south_3);
+		
+							var south_4 = $("#south_4 li:nth-child(" + myMath_28 + ")").attr(myTeamSelects);
+							var south_4b = $("#south_4 li:nth-child(" + myMath_28 + ")").attr(myTeamSelects_B);	
+							var south_4id = $("#south_4 li:nth-child(" + myMath_28 + ")").attr(myTeamSelects_id);
+								$("#Ds").attr(myTeamSelects, south_4 ).attr(myTeamSelects_id, south_4id ).attr(myTeamSelects_B, south_4b ).html(south_4);
+							
+							var south_5 = $("#south_5 li:nth-child(" + myMath_29 + ")").attr(myTeamSelects);
+							var south_5b = $("#south_5 li:nth-child(" + myMath_29 + ")").attr(myTeamSelects_B);
+							var south_5id = $("#south_5 li:nth-child(" + myMath_29 + ")").attr(myTeamSelects_id);
+								$("#Es").attr(myTeamSelects, south_5 ).attr(myTeamSelects_id, south_5id ).attr(myTeamSelects_B, south_5b ).html(south_5);
+		
+							var south_6 = $("#south_6 li:nth-child(" + myMath_30 + ")").attr(myTeamSelects);
+							var south_6b = $("#south_6 li:nth-child(" + myMath_30 + ")").attr(myTeamSelects_B);
+							var south_6id = $("#south_6 li:nth-child(" + myMath_30 + ")").attr(myTeamSelects_id);	
+								$("#Fs").attr(myTeamSelects, south_6 ).attr(myTeamSelects_id, south_6id ).attr(myTeamSelects_B, south_6b ).html(south_6);	
+		
+							var south_7 = $("#south_7 li:nth-child(" + myMath_31 + ")").attr(myTeamSelects);
+							var south_7b = $("#south_7 li:nth-child(" + myMath_31 + ")").attr(myTeamSelects_B);
+							var south_7id = $("#south_7 li:nth-child(" + myMath_31 + ")").attr(myTeamSelects_id);
+								$("#Gs").attr(myTeamSelects, south_7 ).attr(myTeamSelects_id, south_7id ).attr(myTeamSelects_B, south_7b ).html(south_7);
+		
+							var south_8 = $("#south_8 li:nth-child(" + myMath_32 + ")").attr(myTeamSelects);
+							var south_8b = $("#south_8 li:nth-child(" + myMath_32 + ")").attr(myTeamSelects_B);	
+							var south_8id = $("#south_8 li:nth-child(" + myMath_32 + ")").attr(myTeamSelects_id);
+								$("#Hs").attr(myTeamSelects, south_8 ).attr(myTeamSelects_id, south_8id ).attr(myTeamSelects_B, south_8b ).html(south_8);	
+						}
+	
+						roundTwo_results();	
+						
+					
+					}
+					
+					
+					
+					function roundTwo_results() {
+													
+							
+						var myMath_1 = Math.floor((Math.random()*10)+1);
+						var myMath_2 = Math.floor((Math.random()*10)+1);
+						var myMath_3 = Math.floor((Math.random()*10)+1);
+						var myMath_4 = Math.floor((Math.random()*10)+1);
+						
+						var myMath_5 = Math.floor((Math.random()*10)+1);
+						var myMath_6 = Math.floor((Math.random()*10)+1);
+						var myMath_7 = Math.floor((Math.random()*10)+1);
+						var myMath_8 = Math.floor((Math.random()*10)+1);
+						
+						var myMath_9 = Math.floor((Math.random()*10)+1);
+						var myMath_10 = Math.floor((Math.random()*10)+1);
+						var myMath_11 = Math.floor((Math.random()*10)+1);
+						var myMath_12 = Math.floor((Math.random()*10)+1);
+						
+						var myMath_13 = Math.floor((Math.random()*10)+1);
+						var myMath_14 = Math.floor((Math.random()*10)+1);
+						var myMath_15 = Math.floor((Math.random()*10)+1);
+						var myMath_16 = Math.floor((Math.random()*10)+1);
+												
+						if (myMath_1 <=5) { myMath_1 = 1; } else if (myMath_1 <=10 && myMath_1 > 5) { myMath_1 = 2; }
+						if (myMath_2 <=5) { myMath_2 = 1; } else if (myMath_2 <=10 && myMath_2 > 5) { myMath_2 = 2; }
+						if (myMath_3 <=5) { myMath_3 = 1; } else if (myMath_3 <=10 && myMath_3 > 5) { myMath_3 = 2; }
+						if (myMath_4 <=5) { myMath_4 = 1; } else if (myMath_4 <=10 && myMath_4 > 5) { myMath_4 = 2; }						
+						
+						if (myMath_5 <=5) { myMath_5 = 1; } else if (myMath_5 <=10 && myMath_5 > 5) { myMath_5 = 2; }
+						if (myMath_6 <=5) { myMath_6 = 1; } else if (myMath_6 <=10 && myMath_6 > 5) { myMath_6 = 2; }
+						if (myMath_7 <=5) { myMath_7 = 1; } else if (myMath_7 <=10 && myMath_7 > 5) { myMath_7 = 2; }
+						if (myMath_8 <=5) { myMath_8 = 1; } else if (myMath_8 <=10 && myMath_8 > 5) { myMath_8 = 2; }						
+						
+						if (myMath_9 <=5) { myMath_9 = 1; } else if (myMath_9 <=10 && myMath_9 > 5) { myMath_9 = 2; }
+						if (myMath_10 <=5) { myMath_10 = 1; } else if (myMath_10 <=10 && myMath_10 > 5) { myMath_10 = 2; }
+						if (myMath_11 <=5) { myMath_11 = 1; } else if (myMath_11 <=10 && myMath_11 > 5) { myMath_11 = 2; }
+						if (myMath_12 <=5) { myMath_12 = 1; } else if (myMath_12 <=10 && myMath_12 > 5) { myMath_12 = 2; }												
+						
+						if (myMath_13 <=5) { myMath_13 = 1; } else if (myMath_13 <=10 && myMath_13 > 5) { myMath_13 = 2; }
+						if (myMath_14 <=5) { myMath_14 = 1; } else if (myMath_14 <=10 && myMath_14 > 5) { myMath_14 = 2; }
+						if (myMath_15 <=5) { myMath_15 = 1; } else if (myMath_15 <=10 && myMath_15 > 5) { myMath_15 = 2; }
+						if (myMath_16 <=5) { myMath_16 = 1; } else if (myMath_16 <=10 && myMath_16 > 5) { myMath_16 = 2; }						
+							
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									Midwest region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+			
+						var mwest_A = $("#mwest_A li:nth-child(" + myMath_1 + ")").attr(myTeamSelects);
+						var mwest_Ab = $("#mwest_A li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_B);
+						var mwest_Aid = $("#mwest_A li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_id);
+							$("#Imw").attr(myTeamSelects, mwest_A ).attr(myTeamSelects_id, mwest_Aid ).attr(myTeamSelects_B, mwest_Ab ).html(mwest_A);
+	
+						var mwest_B = $("#mwest_B li:nth-child(" + myMath_2 + ")").attr(myTeamSelects);
+						var mwest_Bb = $("#mwest_B li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_B);
+						var mwest_Bid = $("#mwest_B li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_id);
+							$("#Jmw").attr(myTeamSelects, mwest_B ).attr(myTeamSelects_id, mwest_Bid ).attr(myTeamSelects_B, mwest_Bb ).html(mwest_B);
+							
+						var mwest_C = $("#mwest_C li:nth-child(" + myMath_3 + ")").attr(myTeamSelects);
+						var mwest_Cb = $("#mwest_C li:nth-child(" + myMath_3 + ")").attr(myTeamSelects_B);
+						var mwest_Cid = $("#mwest_C li:nth-child(" + myMath_3 + ")").attr(myTeamSelects_id);
+							$("#Kmw").attr(myTeamSelects, mwest_C ).attr(myTeamSelects_id, mwest_Cid ).attr(myTeamSelects_B, mwest_Cb ).html(mwest_C);
+	
+						var mwest_D = $("#mwest_D li:nth-child(" + myMath_4 + ")").attr(myTeamSelects);
+						var mwest_Db = $("#mwest_D li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_B);	
+						var mwest_Did = $("#mwest_D li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_id);
+							$("#Lmw").attr(myTeamSelects, mwest_D ).attr(myTeamSelects_id, mwest_Did ).attr(myTeamSelects_B, mwest_Db ).html(mwest_D);
+	
+								
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									West region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+			
+						var west_A = $("#west_A li:nth-child(" + myMath_5 + ")").attr(myTeamSelects);
+						var west_Ab = $("#west_A li:nth-child(" + myMath_5 + ")").attr(myTeamSelects_B);
+						var west_Aid = $("#west_A li:nth-child(" + myMath_5 + ")").attr(myTeamSelects_id);
+							$("#Iw").attr(myTeamSelects, west_A ).attr(myTeamSelects_id, west_Aid ).attr(myTeamSelects_B, west_Ab ).html(west_A);
+	
+						var west_B = $("#west_B li:nth-child(" + myMath_6 + ")").attr(myTeamSelects);
+						var west_Bb = $("#west_B li:nth-child(" + myMath_6 + ")").attr(myTeamSelects_B);
+						var west_Bid = $("#west_B li:nth-child(" + myMath_6 + ")").attr(myTeamSelects_id);	
+							$("#Jw").attr(myTeamSelects, west_B ).attr(myTeamSelects_id, west_Bid ).attr(myTeamSelects_B, west_Bb ).html(west_B);
+							
+						var west_C = $("#west_C li:nth-child(" + myMath_7 + ")").attr(myTeamSelects);
+						var west_Cb = $("#west_C li:nth-child(" + myMath_7 + ")").attr(myTeamSelects_B);
+						var west_Cid = $("#west_C li:nth-child(" + myMath_7 + ")").attr(myTeamSelects_id);
+							$("#Kw").attr(myTeamSelects, west_C ).attr(myTeamSelects_id, west_Cid ).attr(myTeamSelects_B, west_Cb ).html(west_C);
+	
+						var west_D = $("#west_D li:nth-child(" + myMath_8 + ")").attr(myTeamSelects);
+						var west_Db = $("#west_D li:nth-child(" + myMath_8 + ")").attr(myTeamSelects_B);
+						var west_Did = $("#west_D li:nth-child(" + myMath_8 + ")").attr(myTeamSelects_id);	
+							$("#Lw").attr(myTeamSelects, west_D ).attr(myTeamSelects_id, west_Did ).attr(myTeamSelects_B, west_Db ).html(west_D);
+	
+
+				
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									East region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+			
+						var east_A = $("#east_A li:nth-child(" + myMath_9 + ")").attr(myTeamSelects);
+						var east_Ab = $("#east_A li:nth-child(" + myMath_9 + ")").attr(myTeamSelects_B);
+						var east_Aid = $("#east_A li:nth-child(" + myMath_9 + ")").attr(myTeamSelects_id);
+							$("#Ie").attr(myTeamSelects, east_A ).attr(myTeamSelects_id, east_Aid ).attr(myTeamSelects_B, east_Ab ).html(east_A);
+	
+						var east_B = $("#east_B li:nth-child(" + myMath_10 + ")").attr(myTeamSelects);
+						var east_Bb = $("#east_B li:nth-child(" + myMath_10 + ")").attr(myTeamSelects_B);
+						var east_Bid = $("#east_B li:nth-child(" + myMath_10 + ")").attr(myTeamSelects_id);	
+							$("#Je").attr(myTeamSelects, east_B ).attr(myTeamSelects_id, east_Bid ).attr(myTeamSelects_B, east_Bb ).html(east_B);
+							
+						var east_C = $("#east_C li:nth-child(" + myMath_11 + ")").attr(myTeamSelects);
+						var east_Cb = $("#east_C li:nth-child(" + myMath_11 + ")").attr(myTeamSelects_B);
+						var east_Cid = $("#east_C li:nth-child(" + myMath_11 + ")").attr(myTeamSelects_id);
+							$("#Ke").attr(myTeamSelects, east_C ).attr(myTeamSelects_id, east_Cid ).attr(myTeamSelects_B, east_Cb ).html(east_C);
+	
+						var east_D = $("#east_D li:nth-child(" + myMath_12 + ")").attr(myTeamSelects);
+						var east_Db = $("#east_D li:nth-child(" + myMath_12 + ")").attr(myTeamSelects_B);
+						var east_Did = $("#east_D li:nth-child(" + myMath_12 + ")").attr(myTeamSelects_id);	
+							$("#Le").attr(myTeamSelects, east_D ).attr(myTeamSelects_id, east_Did ).attr(myTeamSelects_B, east_Db ).html(east_D);
+	
+
+				
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									South region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+			
+						var south_A = $("#south_A li:nth-child(" + myMath_13 + ")").attr(myTeamSelects);
+						var south_Ab = $("#south_A li:nth-child(" + myMath_13 + ")").attr(myTeamSelects_B);
+						var south_Aid = $("#south_A li:nth-child(" + myMath_13 + ")").attr(myTeamSelects_id);
+							$("#Is").attr(myTeamSelects, south_A ).attr(myTeamSelects_id, south_Aid ).attr(myTeamSelects_B, south_Ab ).html(south_A);
+	
+						var south_B = $("#south_B li:nth-child(" + myMath_14 + ")").attr(myTeamSelects);
+						var south_Bb = $("#south_B li:nth-child(" + myMath_14 + ")").attr(myTeamSelects_B);	
+						var south_Bid = $("#south_B li:nth-child(" + myMath_14 + ")").attr(myTeamSelects_id);
+							$("#Js").attr(myTeamSelects, south_B ).attr(myTeamSelects_id, south_Bid ).attr(myTeamSelects_B, south_Bb ).html(south_B);
+							
+						var south_C = $("#south_C li:nth-child(" + myMath_15 + ")").attr(myTeamSelects);
+						var south_Cb = $("#south_C li:nth-child(" + myMath_15 + ")").attr(myTeamSelects_B);
+						var south_Cid = $("#south_C li:nth-child(" + myMath_15 + ")").attr(myTeamSelects_id);
+							$("#Ks").attr(myTeamSelects, south_C ).attr(myTeamSelects_id, south_Cid ).attr(myTeamSelects_B, south_Cb ).html(south_C);
+	
+						var south_D = $("#south_D li:nth-child(" + myMath_16 + ")").attr(myTeamSelects);	
+						var south_Db = $("#south_D li:nth-child(" + myMath_16 + ")").attr(myTeamSelects_B);
+						var south_Did = $("#south_D li:nth-child(" + myMath_16 + ")").attr(myTeamSelects_id);
+							$("#Ls").attr(myTeamSelects, south_D ).attr(myTeamSelects_id, south_Did ).attr(myTeamSelects_B, south_Db ).html(south_D);
+	
+
+							
+						roundThree_results();	
+						
+						
+					
+						
+						
+						
+					}
+					
+					
+					function roundThree_results() {
+													
+							
+						var myMath_1 = Math.floor((Math.random()*10)+1);
+						var myMath_2 = Math.floor((Math.random()*10)+1);
+						var myMath_3 = Math.floor((Math.random()*10)+1);
+						var myMath_4 = Math.floor((Math.random()*10)+1);
+						
+						var myMath_5 = Math.floor((Math.random()*10)+1);
+						var myMath_6 = Math.floor((Math.random()*10)+1);
+						var myMath_7 = Math.floor((Math.random()*10)+1);
+						var myMath_8 = Math.floor((Math.random()*10)+1);
+						
+												
+						if (myMath_1 <=5) { myMath_1 = 1; } else if (myMath_1 <=10 && myMath_1 > 5) { myMath_1 = 2; }
+						if (myMath_2 <=5) { myMath_2 = 1; } else if (myMath_2 <=10 && myMath_2 > 5) { myMath_2 = 2; }
+						if (myMath_3 <=5) { myMath_3 = 1; } else if (myMath_3 <=10 && myMath_3 > 5) { myMath_3 = 2; }
+						if (myMath_4 <=5) { myMath_4 = 1; } else if (myMath_4 <=10 && myMath_4 > 5) { myMath_4 = 2; }						
+						
+						if (myMath_5 <=5) { myMath_5 = 1; } else if (myMath_5 <=10 && myMath_5 > 5) { myMath_5 = 2; }
+						if (myMath_6 <=5) { myMath_6 = 1; } else if (myMath_6 <=10 && myMath_6 > 5) { myMath_6 = 2; }
+						if (myMath_7 <=5) { myMath_7 = 1; } else if (myMath_7 <=10 && myMath_7 > 5) { myMath_7 = 2; }
+						if (myMath_8 <=5) { myMath_8 = 1; } else if (myMath_8 <=10 && myMath_8 > 5) { myMath_8 = 2; }	
+											
+							
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									Midwest region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+			
+						var mwest_E = $("#mwest_E li:nth-child(" + myMath_1 + ")").attr(myTeamSelects);
+						var mwest_Eb = $("#mwest_E li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_B);
+						var mwest_Eid = $("#mwest_E li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_id);
+							$("#Mmw").attr(myTeamSelects, mwest_E ).attr(myTeamSelects_id, mwest_Eid ).attr(myTeamSelects_B, mwest_Eb ).html(mwest_E);
+	
+						var mwest_F = $("#mwest_F li:nth-child(" + myMath_2 + ")").attr(myTeamSelects);
+						var mwest_Fb = $("#mwest_F li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_B);
+						var mwest_Fid = $("#mwest_F li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_id);	
+							$("#Nmw").attr(myTeamSelects, mwest_F ).attr(myTeamSelects_id, mwest_Fid ).attr(myTeamSelects_B, mwest_Fb ).html(mwest_F);
+							
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									West region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+									
+						var west_E = $("#west_E li:nth-child(" + myMath_3 + ")").attr(myTeamSelects);
+						var west_Eb = $("#west_E li:nth-child(" + myMath_3 + ")").attr(myTeamSelects_B);
+						var west_Eid = $("#west_E li:nth-child(" + myMath_3 + ")").attr(myTeamSelects_id);
+							$("#Mw").attr(myTeamSelects, west_E ).attr(myTeamSelects_id, west_Eid ).attr(myTeamSelects_B, west_Eb ).html(west_E);
+	
+						var west_F = $("#west_F li:nth-child(" + myMath_4 + ")").attr(myTeamSelects);
+						var west_Fb = $("#west_F li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_B);
+						var west_Fid = $("#west_F li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_id);	
+							$("#Nw").attr(myTeamSelects, west_F ).attr(myTeamSelects_id, west_Fid ).attr(myTeamSelects_B, west_Fb ).html(west_F);
+			
+				
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									East region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+									
+						var east_E = $("#east_E li:nth-child(" + myMath_5 + ")").attr(myTeamSelects);
+						var east_Eb = $("#east_E li:nth-child(" + myMath_5 + ")").attr(myTeamSelects_B);
+						var east_Eid = $("#east_E li:nth-child(" + myMath_5 + ")").attr(myTeamSelects_id);
+							$("#Me").attr(myTeamSelects, east_E ).attr(myTeamSelects_id, east_Eid ).attr(myTeamSelects_B, east_Eb ).html(east_E);
+	
+						var east_F = $("#east_F li:nth-child(" + myMath_6 + ")").attr(myTeamSelects);
+						var east_Fb = $("#east_F li:nth-child(" + myMath_6 + ")").attr(myTeamSelects_B);
+						var east_Fid = $("#east_F li:nth-child(" + myMath_6 + ")").attr(myTeamSelects_id);	
+							$("#Ne").attr(myTeamSelects, east_F ).attr(myTeamSelects_id, east_Fid ).attr(myTeamSelects_B, east_Fb ).html(east_F);
+			
+				
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									South region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+										
+						var south_E = $("#south_E li:nth-child(" + myMath_7 + ")").attr(myTeamSelects);
+						var south_Eb = $("#south_E li:nth-child(" + myMath_7 + ")").attr(myTeamSelects_B);
+						var south_Eid = $("#south_E li:nth-child(" + myMath_7 + ")").attr(myTeamSelects_id);
+							$("#Ms").attr(myTeamSelects, south_E ).attr(myTeamSelects_id, south_Eid ).attr(myTeamSelects_B, south_Eb ).html(south_E);
+	
+						var south_F = $("#south_F li:nth-child(" + myMath_8 + ")").attr(myTeamSelects);	
+						var south_Fb = $("#south_F li:nth-child(" + myMath_8 + ")").attr(myTeamSelects_B);
+						var south_Fid = $("#south_F li:nth-child(" + myMath_8 + ")").attr(myTeamSelects_id);
+							$("#Ns").attr(myTeamSelects, south_F ).attr(myTeamSelects_id, south_Fid ).attr(myTeamSelects_B, south_Fb ).html(south_F);
+										
+							
+						roundFour_results();	
+					}
+					
+					
+					
+					function roundFour_results() {
+							
+						var myMath_1 = Math.floor((Math.random()*10)+1);
+						var myMath_2 = Math.floor((Math.random()*10)+1);
+						var myMath_3 = Math.floor((Math.random()*10)+1);
+						var myMath_4 = Math.floor((Math.random()*10)+1);
+												
+						if (myMath_1 <=5) { myMath_1 = 1; } else if (myMath_1 <=10 && myMath_1 > 5) { myMath_1 = 2; }						
+						if (myMath_2 <=5) { myMath_2 = 1; } else if (myMath_2 <=10 && myMath_2 > 5) { myMath_2 = 2; }
+						if (myMath_3 <=5) { myMath_3 = 1; } else if (myMath_3 <=10 && myMath_3 > 5) { myMath_3 = 2; }
+						if (myMath_4 <=5) { myMath_4 = 1; } else if (myMath_4 <=10 && myMath_4 > 5) { myMath_4 = 2; }						
+						
+							
+												
+							
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									Midwest region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+				
+				
+						var mwest_G = $("#mwest_G li:nth-child(" + myMath_1 + ")").attr(myTeamSelects);
+						var mwest_Gb = $("#mwest_G li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_B);
+						var mwest_Gid = $("#mwest_G li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_id);
+							$("#Omw").attr(myTeamSelects, mwest_G ).attr(myTeamSelects_id, mwest_Gid ).attr(myTeamSelects_B, mwest_Gb ).html(mwest_G);
+	
+							
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									West region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+					
+					
+						var west_G = $("#west_G li:nth-child(" + myMath_2 + ")").attr(myTeamSelects);
+						var west_Gb = $("#west_G li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_B);
+						var west_Gid = $("#west_G li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_id);
+							$("#Ow").attr(myTeamSelects, west_G ).attr(myTeamSelects_id, west_Gid ).attr(myTeamSelects_B, west_Gb ).html(west_G);
+							
+							
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									East region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+					
+					
+						var east_G = $("#east_G li:nth-child(" + myMath_3 + ")").attr(myTeamSelects);
+						var east_Gb = $("#east_G li:nth-child(" + myMath_3 + ")").attr(myTeamSelects_B);
+						var east_Gid = $("#east_G li:nth-child(" + myMath_3 + ")").attr(myTeamSelects_id);
+							$("#Oe").attr(myTeamSelects, east_G ).attr(myTeamSelects_id, east_Gid ).attr(myTeamSelects_B, east_Gb ).html(east_G);
+							
+							
+			/* ---------------------------------------------------------------------------------------------------------  
+			
+									
+									South region
+			
+			
+			---------------------------------------------------------------------------------------------------------  */
+				
+				
+						var south_G = $("#south_G li:nth-child(" + myMath_4 + ")").attr(myTeamSelects);
+						var south_Gb = $("#south_G li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_B);
+						var south_Gid = $("#south_G li:nth-child(" + myMath_4 + ")").attr(myTeamSelects_id);
+							$("#Os").attr(myTeamSelects, south_G ).attr(myTeamSelects_id, south_Gid ).attr(myTeamSelects_B, south_Gb ).html(south_G);
+								
+							
+							
+						roundFive_results();	
+					}
+					
+					
+					
+					
+					function roundFive_results() {
+							
+						var myMath_1 = Math.floor((Math.random()*10)+1);
+						var myMath_2 = Math.floor((Math.random()*10)+1);
+												
+						if (myMath_1 <=5) { myMath_1 = 1; } else if (myMath_1 <=10 && myMath_1 > 5) { myMath_1 = 2; }
+						if (myMath_2 <=5) { myMath_2 = 1; } else if (myMath_2 <=10 && myMath_2 > 5) { myMath_2 = 2; }
+					
+						var final_A = $("#final_Four_right li:nth-child(" + myMath_1 + ")").attr(myTeamSelects);
+						var final_Ab = $("#final_Four_right li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_B);
+						var final_Aid = $("#final_Four_right li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_id);
+							$("#final_A").attr(myTeamSelects, final_A ).attr(myTeamSelects_id, final_Aid ).attr(myTeamSelects_B, final_Ab ).html(final_A);
+							
+						var final_B = $("#final_Four_left li:nth-child(" + myMath_2 + ")").attr(myTeamSelects);
+						var final_Bb = $("#final_Four_left li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_B);
+						var final_Bid = $("#final_Four_left li:nth-child(" + myMath_2 + ")").attr(myTeamSelects_id);
+							$("#final_B").attr(myTeamSelects, final_B ).attr(myTeamSelects_id, final_Bid ).attr(myTeamSelects_B, final_Bb ).html(final_B);
+						
+						champion_results();
+					
+					}
+					
+					
+					
+					function champion_results() {
+							
+						var myMath_1 = Math.floor((Math.random()*10)+1);
+												
+						if (myMath_1 <=5) { myMath_1 = 1; } else if (myMath_1 <=10 && myMath_1 > 5) { myMath_1 = 2; }
+					
+						var champion = $("#final_bout li:nth-child(" + myMath_1 + ")").attr(myTeamSelects);
+						var championb = $("#final_bout li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_B);
+						var championid = $("#final_bout li:nth-child(" + myMath_1 + ")").attr(myTeamSelects_id);
+							$("#champ").attr(myTeamSelects, champion ).attr(myTeamSelects_id, championid ).attr(myTeamSelects_B, championb ).html(champion);
+						
+					
+					}
+										
+					var champsText = $("#champ").attr("data-id");
+					
+					$("li").each(function() {
+						
+						var thisText = $(this).attr("data-id");
+						
+						if (thisText === champsText) {
+							$(this).addClass("boldMe");
+						} else {
+							$(this).removeClass("boldMe");
+						}	
+						
+						var nameLength = $(this).html();
+						
+						nameLength = nameLength.length;
+						
+						if (nameLength >= 16 ) {
+							$(this).css("font-size",".66em");							
+						} else {
+							$(this).css("font-size",".75em");
+						}
+						$("#champ").css("font-size","1em");
+						
+					});
+					
+					
+					
+				
+				});
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				$(".bracket_li_span").click(function() {
+					
+					$(".bracket_li_span").removeClass("bracket_selected");
+					
+				});
+				
+				
+				$(".draggable").draggable({ 
+					start: function () {
+						//$(this).find("div").hide(0);													
+					},
+					
+					helper: "clone",
+					revert: false,
+					//helper: "clone",
+					//cursor: "crosshair",
+					//refreshPositions: true,
+					//snap: true,
+					
+					stop: function () {
+						//$(this).find("div").hide(0);							
+						//$(this).hide(0);
+						
+					}
+					
+				});
+				
+	
+				
+				$(".droppable").droppable({	
+						
+					end: function() {
+						//$(".draggable").find("li").hide(0);						
+					},
+
+					drop: function( event, ui ) {						
+						
+						$(this).removeClass("notSelected");
+						
+						$(this).addClass("draggable");
+						
+						var x_teamName = ui.draggable.attr("data-name");
+						var x_teamMascot = ui.draggable.attr("data-mascot");
+						var x_teamSeed = ui.draggable.attr("data-id");
+						var x_teamRegion = ui.draggable.attr("data-region");
+						var x_dropMe = $(this).attr("id");
+												
+						var x_teamID = ui.draggable.attr("id");
+						
+						
+						//var x_teamColors = ui.draggable.attr("data-colors");						
+						
+						//$(this).html(ui.draggable.attr("data-name"));
+						
+						
+							if (x_teamRegion === "south") {
+								if (x_teamSeed.length === 2 ) { 
+									x_teamID = x_teamSeed.substr(0, 1);
+									//x_dropMe = x_dropMe.substr(0, 1);
+								} else {
+									x_teamID = x_teamSeed.substr(0, 2);
+									//x_dropMe = x_dropMe.substr(0, 2);
+								}
+								
+								
+								
+							} else if (x_teamRegion === "midwest") {
+								if (x_teamSeed.length === 3 ) { 
+									x_teamID = x_teamSeed.substr(0, 1);
+									//x_dropMe = x_dropMe.substr(0, 1);
+								} else {
+									x_teamID = x_teamSeed.substr(0, 2);
+									//x_dropMe = x_dropMe.substr(0, 2);
+								}
+								
+								//thisID = x_dropMe.substr(0, 1);
+								
+								
+								
+								
+							} else if (x_teamRegion === "west") {
+								if (x_teamSeed.length === 2 ) { 
+									x_teamID = x_teamSeed.substr(0, 1);
+									//x_dropMe = x_dropMe.substr(0, 1);
+								} else {
+									x_teamID = x_teamSeed.substr(0, 2);
+									//x_dropMe = x_dropMe.substr(0, 2);
+								}
+								
+								//thisID = x_dropMe.substr(0, 1);
+								
+							} else if (x_teamRegion === "east") {
+								if (x_teamSeed.length === 2 ) { 
+									x_teamID = x_teamSeed.substr(0, 1);
+									//x_dropMe = x_dropMe.substr(0, 1);
+								} else {
+									x_teamID = x_teamSeed.substr(0, 2);
+									//x_dropMe = x_dropMe.substr(0, 2);
+								}
+								
+								//thisID = x_dropMe.substr(0, 1);
+								
+							}
+						
+						var thisID = x_teamID.substr(0, 1);
+						
+						if (myTeamSelects === "teamName" || myTeamSelects === "data-name") {
+																											
+							if (x_teamName !== "Play-in") {
+								$(this).attr("data-name",x_teamName);
+								$(this).attr("data-mascot",x_teamMascot);
+								$(this).attr("data-id",x_teamSeed);
+								$(this).attr("data-region",x_teamRegion);								
+								
+								$(this).html(ui.draggable.attr("data-name"));
+								
+
+								runMyBracket(x_teamName,x_teamMascot,x_teamSeed,x_dropMe,x_teamRegion,thisID);
+
+							} 
+							
+						} else if (myTeamSelects === "teamMascot" || myTeamSelects === "data-mascot") {
+							if (x_teamName !== "Play-in") {
+								$(this).attr("data-name",x_teamName);
+								$(this).attr("data-mascot",x_teamMascot);
+								$(this).attr("data-id",x_teamSeed);
+								$(this).attr("data-region",x_teamRegion);	
+								
+								$(this).html(ui.draggable.attr("data-mascot"));								
+								
+
+								runMyBracket(x_teamName,x_teamMascot,x_teamSeed,x_dropMe,x_teamRegion,thisID);
+								
+							}
+						}
+						
+						var champsText = $("#champ").attr("data-id");
+					
+						$("li").each(function() {
+							
+							var thisText = $(this).attr("data-id");
+							
+							if (thisText === champsText) {
+								$(this).addClass("boldMe");
+							} else {
+								$(this).removeClass("boldMe");
+							}	
+							
+							var nameLength = $(this).html();
+							
+							nameLength = nameLength.length;
+							
+							if (nameLength >= 16 ) {
+								$(this).css("font-size",".66em");								
+							} else {
+								$(this).css("font-size",".75em");
+							}
+							$("#champ").css("font-size","1em");
+							
+
+						
+							
+						});
+						
+						
+						
+
+					}
+				});
+				
+				
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+								setting the auto back fill of selections. i.e. If champion is chosen, the games leading to that final will auto-fill with your selection.
+
+
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+ 				
+				function runMyBracket(n,m,i,x,r,j) {
+					
+					var region = r;
+						
+					var seedNum = i;					
+					var idInit = j;
+					
+					//var myID = i;
+					
+					if (region === "south") {
+						if (seedNum.length === 2 ) { 
+							seedNum = seedNum.substr(0, 1);														
+						} else {
+							seedNum = seedNum.substr(0, 2);
+						}
+						
+						if (seedNum === "17" || seedNum === "18"  ) {
+							seedNum = "11";
+						}
+						
+					} else if (region === "midwest") {
+						if (seedNum.length === 3 ) { 
+							seedNum = seedNum.substr(0, 1);
+						} else {
+							seedNum = seedNum.substr(0, 2);
+						}
+												
+/*
+						if (seedNum === "17" || seedNum === "18"  ) {
+							seedNum = "16";
+						}
+*/
+/*
+												
+						if ( seedNum === "19" || seedNum === "20") { 
+							seedNum = "12";	
+						}
+								
+						if ( seedNum === "21" || seedNum === "22") { 
+							seedNum = "16";	
+						}
+*/
+						
+					} else if (region === "west") {
+						if (seedNum.length === 2 ) { 
+							seedNum = seedNum.substr(0, 1);
+						} else {
+							seedNum = seedNum.substr(0, 2);
+						}
+						
+						if (seedNum === "17" || seedNum === "18"  ) {
+							seedNum = "11";
+						}
+					} else if (region === "east") {
+						if (seedNum.length === 2 ) { 
+							seedNum = seedNum.substr(0, 1);
+						} else {
+							seedNum = seedNum.substr(0, 2);
+						}
+						
+						if (seedNum === "17" || seedNum === "18"  ) {
+							seedNum = "11";
+						}
+						
+						if (seedNum === "19" || seedNum === "20"  ) {
+							seedNum = "16";
+						}
+					}
+					
+
+					if (myTeamSelects === "data-name" || myTeamSelects === "teamName"  ) {
+						var thisHtml = n;
+						teamBracket();
+					}  
+ 
+					
+					if (myTeamSelects === "data-mascot" || myTeamSelects === "teamMascot"  ) {
+						var thisHtml = m;
+						MascotBracket();												
+					}
+					
+					
+		
+		/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			//
+			//					From id= Champ
+			//					
+		 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+					
+					if (x === "champ") {
+						$("li").removeClass("boldMe");
+						$("#champ").addClass("boldMe");
+						if (region === "midwest" ) {
+							
+							$("#final_A").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+							$("#Omw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+							
+							
+								
+								if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13"  || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M"  ) {									
+										
+									$("#Mmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+											$("#Imw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+											
+												if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+													$("#Amw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Bmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										} else {
+											$("#Jmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+													$("#Cmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Dmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										}
+									
+									
+										
+								} else {
+								
+									$("#Nmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K" ) {
+											$("#Kmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="6" || seedNum==="11" || idInit==="E" ) {
+													$("#Emw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Fmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+													
+										} else {
+											$("#Lmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+													$("#Gmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Hmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+										}
+								}
+								
+							
+							
+						} else if (region === "west") {
+							
+							$("#final_B").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+							$("#Ow").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+								
+								if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+									$("#Mw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+											$("#Iw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+											
+												if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+													$("#Aw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Bw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										} else {
+											$("#Jw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+													$("#Cw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Dw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										}
+										
+								} else {
+								
+									$("#Nw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K" ) {
+											$("#Kw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="6" || seedNum==="11" || idInit==="E" ) {
+													$("#Ew").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Fw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+													
+										} else {
+											$("#Lw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+													$("#Gw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Hw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+										}
+								}
+								
+								
+						} else if (region === "south") {
+
+							$("#final_B").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+							$("#Os").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+							
+							
+								if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+									$("#Ms").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+											$("#Is").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+											
+												if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+													$("#As").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Bs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										} else {
+											$("#Js").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+													$("#Cs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Ds").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										}
+										
+								} else {
+									$("#Ns").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K" ) {
+											$("#Ks").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="6" || seedNum==="11" || idInit==="E" ) {
+													$("#Es").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Fs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+													
+										} else {
+											$("#Ls").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+													$("#Gs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Hs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+										}
+								}
+							
+						} else if (region === "east") {
+							
+							$("#final_A").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+							$("#Oe").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+							
+								
+								if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+									$("#Me").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+											$("#Ie").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+											
+												if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+													$("#Ae").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Be").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										} else {
+											$("#Je").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+													$("#Ce").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#De").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										}
+										
+								} else {
+									$("#Ne").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K" ) {
+											$("#Ke").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="6" || seedNum==="11" || idInit==="E" ) {
+													$("#Ee").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Fe").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+													
+										} else {
+											$("#Le").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+													$("#Ge").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#He").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+										}
+								}
+								
+								
+								
+						}
+					} // END CHamp
+
+
+		/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			//
+			//					From id= Final_B
+			//					
+		 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+					
+					if (x === "final_B") {
+						if (region === "south") {
+							
+							
+							$("#Os").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+							
+								if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+									$("#Ms").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+											$("#Is").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+											
+												if (seedNum==="1" || seedNum==="16"  || idInit==="A") {
+													$("#As").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Bs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										} else {
+											$("#Js").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="5" || seedNum==="12"  || idInit==="C") {
+													$("#Cs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Ds").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										}
+										
+								} else {
+									$("#Ns").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14"  || idInit==="E" || idInit==="F" || idInit==="K") {
+											$("#Ks").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="6" || seedNum==="11"  || idInit==="E") {
+													$("#Es").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Fs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+													
+										} else {
+											$("#Ls").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="7" || seedNum==="10"  || idInit==="G") {
+													$("#Gs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Hs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+										}
+								}
+							
+						} else if (region === "east") {
+							
+							
+							$("#Oe").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+								
+								
+								if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+									$("#Me").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+											$("#Ie").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+											
+												if (seedNum==="1" || seedNum==="16"  || idInit==="A") {
+													$("#Ae").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Be").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										} else {
+											$("#Je").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="5" || seedNum==="12"  || idInit==="C") {
+													$("#Ce").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#De").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										}
+										
+								} else {
+									$("#Ne").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14"  || idInit==="E" || idInit==="F" || idInit==="K") {
+											$("#Ke").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="6" || seedNum==="11"  || idInit==="E") {
+													$("#Ee").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Fe").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+													
+										} else {
+											$("#Le").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="7" || seedNum==="10"  || idInit==="G") {
+													$("#Ge").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#He").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+										}
+								}
+								
+								
+								
+						}
+					} // END Final_B
+					
+
+		/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			//
+			//					From id= Final_A
+			//					
+		 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+					
+					if (x === "final_A") {
+						
+						if (region === "midwest") {
+							
+							
+							$("#Omw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+							
+							
+								
+								if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+									$("#Mmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+											$("#Imw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+											
+												if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+													$("#Amw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Bmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										} else {
+											$("#Jmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+													$("#Cmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Dmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										}
+										
+								} else {
+									$("#Nmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="G" || idInit==="K" ) {
+											$("#Kmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="6" || seedNum==="11" || idInit==="E") {
+													$("#Emw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Fmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+													
+										} else {
+											$("#Lmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+													$("#Gmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Hmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+										}
+								}
+								
+							
+							
+						} else if (region === "west") {
+							
+							
+							$("#Ow").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+								
+								if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+									$("#Mw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+											$("#Iw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+											
+												if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+													$("#Aw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Bw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										} else {
+											$("#Jw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+													$("#Cw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Dw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+												
+										}
+										
+								} else {
+									$("#Nw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+									
+										if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="G" || idInit==="K" ) {
+											$("#Kw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="6" || seedNum==="11" || idInit==="E" ) {
+													$("#Ew").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Fw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+													
+										} else {
+											$("#Lw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											
+												if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+													$("#Gw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+												} else {
+													$("#Hw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												}
+										}
+								}
+								
+								
+						}
+					} // END Final_A
+					
+
+
+					
+					
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//
+	//					South Region
+	//					
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+					
+					if (x === "Os") {
+
+							
+							
+							if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M"  ) {
+								$("#Ms").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+									if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I") {
+										$("#Is").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+										
+											if (seedNum==="1" || seedNum==="16" || idInit==="A") {
+												$("#As").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Bs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+											
+									} else {
+										$("#Js").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="5" || seedNum==="12" || idInit==="C") {
+												$("#Cs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Ds").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+											
+									}
+									
+							} else {
+								$("#Ns").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+									if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K") {
+										$("#Ks").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="6" || seedNum==="11" || idInit==="E") {
+												$("#Es").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Fs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+												
+									} else {
+										$("#Ls").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="7" || seedNum==="10" || idInit==="G") {
+												$("#Gs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Hs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+									}
+							}
+						 
+					}	// END Os		
+
+
+
+		// -------------------------------------------------- Elite 8 South region -----------------------------------------------------------------
+							
+									if (x === "Ms") {
+
+											if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I") {
+												$("#Is").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+												
+													if (seedNum==="1" || seedNum==="16" || idInit==="A") {
+														$("#As").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Bs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+													
+											} else {
+												$("#Js").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="5" || seedNum==="12" || idInit==="C") {
+														$("#Cs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Ds").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+													
+											}
+									}		
+										
+									if (x === "Ns") {	
+											
+											if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K") {
+												$("#Ks").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="6" || seedNum==="11" || idInit==="E") {
+														$("#Es").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Fs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+														
+											} else {
+												$("#Ls").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="7" || seedNum==="10" || idInit==="G") {
+														$("#Gs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Hs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+											}
+									}
+									
+							// -------------------------------------------------- Sweet 16 South region -----------------------------------------------------------------
+												
+														if (x === "Is") {
+																
+																if (seedNum==="1" || seedNum==="16" || idInit==="A") {
+																	$("#As").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Bs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+														}
+														if (x === "Js") {
+																	
+																if (seedNum==="5" || seedNum==="12" || idInit==="C") {
+																	$("#Cs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Ds").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+																		
+																
+														}		
+
+															
+														if (x === "Ks") {	
+
+																if (seedNum==="6" || seedNum==="11" || idInit==="E") {
+																	$("#Es").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Fs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+														}
+														if (x === "Ls") {					
+
+															if (seedNum==="7" || seedNum==="10" || idInit==="G") {
+																$("#Gs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+															} else {
+																$("#Hs").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+															}
+																
+														}
+																	
+								
+											
+					
+			
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//
+	//					West Region
+	//					
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+					
+					if (x === "Ow") {
+
+							
+							
+							if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+								$("#Mw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+									if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B"|| idInit==="I"  ) {
+										$("#Iw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+										
+											if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+												$("#Aw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Bw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+											
+									} else {
+										$("#Jw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+												$("#Cw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Dw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+											
+									}
+									
+							} else {
+								$("#Nw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+									if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K" ) {
+										$("#Kw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="6" || seedNum==="11" || idInit==="E") {
+												$("#Ew").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Fw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+												
+									} else {
+										$("#Lw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="7" || seedNum==="10" || idInit==="G") {
+												$("#Gw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Hw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+									}
+							}
+						 
+					}	// END Ow						
+				
+
+		// -------------------------------------------------- Elite 8 West region -----------------------------------------------------------------
+							
+									if (x === "Mw") {
+
+											if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I" ) {
+												$("#Iw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+												
+													if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+														$("#Aw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Bw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+													
+											} else {
+												$("#Jw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+														$("#Cw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Dw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+													
+											}
+									}		
+										
+									if (x === "Nw") {	
+											
+											if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14"  || idInit==="E"  || idInit==="F" || idInit==="K" ) {
+												$("#Kw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="6" || seedNum==="11"  || idInit==="E") {
+														$("#Ew").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Fw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+														
+											} else {
+												$("#Lw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+														$("#Gw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Hw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+											}
+									}
+									
+							// -------------------------------------------------- Sweet 16 West region -----------------------------------------------------------------
+												
+														if (x === "Iw") {
+																
+																if (seedNum==="1" || seedNum==="16"  || idInit==="A" ) {
+																	$("#Aw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Bw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+														}
+														if (x === "Jw") {
+																	
+																if (seedNum==="5" || seedNum==="12"  || idInit==="C" ) {
+																	$("#Cw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Dw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+																		
+																
+														}		
+
+															
+														if (x === "Kw") {	
+
+																if (seedNum==="6" || seedNum==="11"  || idInit==="E" ) {
+																	$("#Ew").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Fw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+														}
+														if (x === "Lw") {					
+
+															if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+																$("#Gw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+															} else {
+																$("#Hw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+															}
+																
+														}
+																	
+								
+								
+			
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//
+	//					Midwest Region
+	//					
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+					
+					if (x === "Omw") {
+
+							
+							
+							if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M"  ) {
+								$("#Mmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+									if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B"  || idInit==="I" ) {
+										$("#Imw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+										
+											if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+												$("#Amw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else if (seedNum==="8" || seedNum==="9" || idInit==="B") {
+												$("#Bmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+											
+									} else {
+										$("#Jmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="5" || seedNum==="12" || idInit==="C"  ) {
+												$("#Cmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Dmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+											
+									}
+									
+							} else {
+								$("#Nmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+									if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K"  ) {
+										$("#Kmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="6" || seedNum==="11" || idInit==="E" ) {
+												$("#Emw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Fmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+												
+									} else {
+										$("#Lmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+												$("#Gmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Hmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+									}
+							}
+						 
+					}	// END Omw						
+
+		// -------------------------------------------------- Elite 8 Midwest region -----------------------------------------------------------------
+							
+									if (x === "Mmw") {
+									
+											if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9"  || idInit==="A" || idInit==="B" || idInit==="I" ) {
+												$("#Imw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+												
+													if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+														$("#Amw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Bmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+													
+											} else {
+												$("#Jmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+														$("#Cmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Dmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+													
+											}
+									}		
+										
+									if (x === "Nmw") {	
+											
+											if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K" ) {
+												$("#Kmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="6" || seedNum==="11" || idInit==="E" ) {
+														$("#Emw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Fmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+														
+											} else {
+												$("#Lmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+														$("#Gmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Hmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+											}
+									}
+									
+							// -------------------------------------------------- Sweet 16 Midwest region -----------------------------------------------------------------
+												
+														if (x === "Imw") {
+																
+																if (seedNum==="1" || seedNum==="16" || idInit==="A" ) {
+																	$("#Amw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Bmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+														}
+														if (x === "Jmw") {
+																	
+																if (seedNum==="5" || seedNum==="12" || idInit==="C" ) {
+																	$("#Cmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Dmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+																		
+																
+														}		
+
+															
+														if (x === "Kmw") {	
+
+																if (seedNum==="6" || seedNum==="11" || idInit==="E" ) {
+																	$("#Emw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Fmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+														}
+														if (x === "Lmw") {					
+
+															if (seedNum==="7" || seedNum==="10" || idInit==="G" ) {
+																$("#Gmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+															} else {
+																$("#Hmw").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+															}
+																
+														}
+																	
+								
+				
+			
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//
+	//					East Region
+	//					
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+					
+					if (x === "Oe") {
+
+							
+							
+							if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || seedNum==="5" || seedNum==="12" || seedNum==="4" || seedNum==="13" || idInit==="A" || idInit==="B" || idInit==="C" || idInit==="D" || idInit==="I" || idInit==="J" || idInit==="M" ) {
+								$("#Me").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+									if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B"|| idInit==="I" ) {
+										$("#Ie").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+										
+											if (seedNum==="1" || seedNum==="16"|| idInit==="A" ) {
+												$("#Ae").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Be").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+											
+									} else {
+										$("#Je").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="5" || seedNum==="12"|| idInit==="C" ) {
+												$("#Ce").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#De").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+											
+									}
+									
+							} else {
+								$("#Ne").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+								
+									if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K") {
+										$("#Ke").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="6" || seedNum==="11" || idInit==="E") {
+												$("#Ee").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#Fe").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+												
+									} else {
+										$("#Le").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+										
+											if (seedNum==="7" || seedNum==="10" || idInit==="G") {
+												$("#Ge").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+											} else {
+												$("#He").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+											}
+									}
+							}
+						 
+					}	// END Oe			
+					
+		// -------------------------------------------------- Elite 8 East region -----------------------------------------------------------------
+							
+									if (x === "Me") {
+
+									
+											if (seedNum==="1" || seedNum==="16" || seedNum==="8" || seedNum==="9" || idInit==="A" || idInit==="B" || idInit==="I") {
+												$("#Ie").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);	
+												
+													if (seedNum==="1" || seedNum==="16" || idInit==="A") {
+														$("#Ae").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Be").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+													
+											} else {
+												$("#Je").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="5" || seedNum==="12" || idInit==="C") {
+														$("#Ce").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#De").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+													
+											}
+									}		
+
+										
+									if (x === "Ne") {	
+											
+											if (seedNum==="6" || seedNum==="11" || seedNum==="3" || seedNum==="14" || idInit==="E" || idInit==="F" || idInit==="K") {
+												$("#Ke").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="6" || seedNum==="11" || idInit==="E") {
+														$("#Ee").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#Fe").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+														
+											} else {
+												$("#Le").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+												
+													if (seedNum==="7" || seedNum==="10" || idInit==="G") {
+														$("#Ge").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+													} else {
+														$("#He").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+													}
+											}
+									}
+									
+							// -------------------------------------------------- Sweet 16 East region -----------------------------------------------------------------
+												
+														if (x === "Ie") {
+																
+																if (seedNum==="1" || seedNum==="16" || idInit==="A") {
+																	$("#Ae").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Be").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+														}
+														if (x === "Je") {
+																	
+																if (seedNum==="5" || seedNum==="12" || idInit==="C") {
+																	$("#Ce").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#De").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+																		
+																
+														}		
+
+															
+														if (x === "Ke") {	
+
+																if (seedNum==="6" || seedNum==="11" || idInit==="E") {
+																	$("#Ee").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+																} else {
+																	$("#Fe").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+																}
+														}
+														if (x === "Le") {					
+
+															if (seedNum==="7" || seedNum==="10" || idInit==="G") {
+																$("#Ge").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);		
+															} else {
+																$("#He").removeClass("notSelected").attr("data-id", i ).attr("data-name", n ).attr("data-mascot", m ).html(thisHtml);
+															}
+																
+														}
+									
+																		
+									 
+								
+					var champsText = $("#champ").attr("data-id");
+					
+					$("li").each(function() {
+						var thisText = $(this).attr("data-id");
+						
+						if (thisText === champsText) {
+							$(this).addClass("boldMe");
+						} else {
+							$(this).removeClass("boldMe");
+						}	
+						
+						
+						var name = $(this).html();
+						
+						nameLength = name.length;
+						
+						if (nameLength >= 16 ) {
+							$(this).css("font-size",".66em");							
+						} else {
+							$(this).css("font-size",".75em");
+						}
+						$("#champ").css("font-size","1em");
+/*
+						if (name === "Virginia Commonwealth") {
+							$(this).html("VCU");
+						}
+*/
+					});
+					
+					
+																
+				
+				}
+				//var myTeamSelects = "teamName"; // teamName, teamMascot, teamColors
+				
+				
+				
+			});
+			
+		</script>
+
+	
+		<script type="text/javascript" src="http://www.indystar.com/static/js/cobrand/analytics.js"></script>
+					
+		<script type="text/javascript">
+		
+			
+			/******************************/
+			/**** Begin Chartbeat code ****/
+			/******************************/
+			
+			
+				/************************************************************/
+				
+					// -----    UPDATE: domain
+					
+					// -----    UPDATE: uid number for your site.
+					
+					// -----    UPDATE: Section
+					
+					// -----    UPDATE: Author(s)
+				
+				/************************************************************/
+			
+				var _sf_startpt=(new Date()).getTime();	
+			
+				var _sf_async_config={};
+				/** CONFIGURATION START **/
+				_sf_async_config.uid = 47635;
+				_sf_async_config.domain = "indystar.com"; /** CHANGE THIS **/
+				
+				_sf_async_config.sections = "Sports,Interactives"; /* ---	Section - so this article will show on section specific Chartbeat boards	--- */
+				_sf_async_config.authors = "Michael Campbell"; /* ---	Author(s) - so this article will show on author specific Chartbeat boards	--- */
+				
+				_sf_async_config.useCanonical = true;
+				
+				_sf_async_config.path = window.location.pathname;
+				
+				/** CONFIGURATION END **/
+				(function() {
+		        function loadChartbeat() {
+		            window._sf_endpt = (new Date()).getTime();
+		            var e = document.createElement('script');
+		            e.setAttribute('language', 'javascript');
+		            e.setAttribute('type', 'text/javascript');
+		            e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+		            document.body.appendChild(e);
+		        }
+		        var oldonload = window.onload;
+		        window.onload = (typeof window.onload != 'function') ?
+		            loadChartbeat : function() {
+		                oldonload();
+		                loadChartbeat();
+		            };
+		    })();
+			
+			
+
+			
+			
+        
+        	var ad_web_service= 'interactive/'; /* just an example */
+            utag_data= {
+                cst: ad_web_service,
+                instance: 'prod', /* or 'qa' or 'prod' */
+                partner_type: 'cobrand',
+                pathName: 'indystar :/story/news/Interactive--'+document.title,
+                profile: 'indystar',
+                ssts: 'sports'
+            };
+            // Load Analytics
+            cobrandPageLoad(utag_data);
+
+			
+			
+			
+		</script>
+		
+		
+
+		
+		
+	</body>
+</html>
